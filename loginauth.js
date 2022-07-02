@@ -1,9 +1,14 @@
 class LoginAuth {
-    constructor() {
+    constructor(host, port) {
+        this.host = null;
+        this.port = null;
         this.authStrategy;
     }
 
-    async initiate() {
+    async initialize(host, port) {
+        this.host = host;
+        this.port = port;
+
         if (process.env.WANT_GOOGLE_AUTH) {
             this.authStrategy = Passport.use(new GoogleStrategy({
                 clientID:     process.env.GOOGLE_CLIENT_ID,
@@ -18,8 +23,7 @@ class LoginAuth {
     }
 
     async registerStrategy(request, accessToken, refreshToken, profile, done) {
-        console.log(profile);
-        //return done(null, profile);
+        return done(null, profile);
     }
 
 }

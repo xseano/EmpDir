@@ -7,8 +7,8 @@ global.Passport       = require('passport');
 global.GoogleStrategy = require('passport-google-oidc');
 
 // App Globals
-global.Main      = require('./main');
-global.LoginAuth = require('./LoginAuth')
+global.Main      = require('./Main');
+global.LoginAuth = require('./LoginAuth');
 global.Config    = require('dotenv').config();
 
 // Start the application
