@@ -9,17 +9,27 @@ class Main {
     }
 
     async initialize() {
+        await this.configSession();
+        await this.configPassport();
+        await this.startWebserver();
+        await this.configSerialization();
+        await this.routing.initialize();
+    }
+
+    async configSession() {
+        // configure our session management service
         WebServer.use(Session({
             secret: process.env.SESSION_SECRET,
             resave: false,
             saveUninitialized: true,
-            cookie : { secure : false, maxAge : (process.env.COOKIE_DURATION_HOURS * 60 * 60 * 1000) }
+            cookie: { 
+                secure : false, 
+                maxAge : (process.env.COOKIE_DURATION_HOURS * 60 * 60 * 1000) 
+            }
         }));
+    }
 
-        WebServer.use(Passport.initialize());
-        WebServer.use(Passport.session());
-        WebServer.use(this.logging);
-        
+    async startWebserver() {
         if (process.env.DEV_ENV) {
             this.server = WebServer.listen(process.env.WEBSERVER_PORT, "127.0.0.1", () => {  
                 this.host = this.server.address().address;
@@ -37,7 +47,18 @@ class Main {
                 console.log(`Webserver deployed at http://${this.host}:${this.port}`);
             });
         }
+    }
 
+    async configPassport() {
+        // configure our passport instance
+        WebServer.use(Passport.initialize());
+        WebServer.use(Passport.session());
+
+        // logging middleware
+        WebServer.use(this.logging);
+    }
+
+    async configSerialization() {
         Passport.serializeUser((user, done) => { 
             console.log(`Serialized:`);
             console.log(user);        
@@ -49,8 +70,6 @@ class Main {
             console.log(user);        
             done(null, user);
         });
-
-        await this.routing.initialize();
     }
 
     async logging(req, res, next) {
