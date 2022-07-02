@@ -1,12 +1,10 @@
-const Routing = require("./routing");
-
 class Main {
     constructor() {
         this.server = null;
         this.host = null;
         this.port = null;
 
-        this.login = new LoginAuth();
+        this.login = new Login();
         this.routing = new Routing();
     }
 

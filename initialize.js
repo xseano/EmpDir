@@ -8,8 +8,8 @@ global.GoogleStrategy = require('passport-google-oidc');
 
 // App Globals
 global.Main      = require('./Main');
-global.LoginAuth = require('./LoginAuth');
-global.Routing = require('./Routing');
+global.Login     = require('./Login');
+global.Routing   = require('./Routing');
 
 // Config
 global.Config    = require('dotenv').config();

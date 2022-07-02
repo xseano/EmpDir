@@ -1,4 +1,4 @@
-class LoginAuth {
+class Login {
     constructor(host, port) {
         this.host = null;
         this.port = null;
@@ -28,4 +28,4 @@ class LoginAuth {
 
 }
 
-module.exports = LoginAuth;
+module.exports = Login;
