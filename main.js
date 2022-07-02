@@ -34,7 +34,7 @@ class Main {
             this.server = WebServer.listen(process.env.WEBSERVER_PORT, () => {     
                 this.host = this.server.address().address;
                 this.port = this.server.address().port;   
-                this.login.initialize(this.host, this.port);  
+                this.login.initialize(this.host, this.port);
 
                 console.log(`Webserver deployed at http://${this.host}:${this.port}`);
             });
@@ -53,11 +53,6 @@ class Main {
         });
 
         await this.routing.initialize();
-    }
-
-    async isAuthenticated(req) {
-        // checks that the user has a valid session 
-        return req.isAuthenticated();
     }
 
     async logging(req, res, next) {

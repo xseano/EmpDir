@@ -13,7 +13,7 @@ class LoginAuth {
             this.authStrategy = Passport.use(new GoogleStrategy({
                 clientID:     process.env.GOOGLE_CLIENT_ID,
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-                callbackURL: `http://${this.host}:${this.port}/auth/google/callback`,
+                callbackURL: `http://${this.host}:${this.port}${process.env.GOOGLE_AUTH_PATH}/callback`,
                 passReqToCallback: true
               }, this.registerStrategy));
         } else {
