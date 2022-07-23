@@ -3,6 +3,7 @@
 global.Express        = require('express');
 global.WebServer      = Express();
 global.Session        = require('express-session');
+global.Cors           = require('cors');
 global.Passport       = require('passport');
 global.GoogleStrategy = require('passport-google-oidc');
 

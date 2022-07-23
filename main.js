@@ -10,7 +10,7 @@ class Main {
 
     async initialize() {
         await this.configSession();
-        await this.configPassport();
+        await this.configServer();
         await this.startWebserver();
         await this.configSerialization();
         await this.routing.initialize();
@@ -49,13 +49,26 @@ class Main {
         }
     }
 
-    async configPassport() {
+    async configServer() {
         // configure our passport instance
         WebServer.use(Passport.initialize());
         WebServer.use(Passport.session());
 
         // logging middleware
         WebServer.use(this.logging);
+
+        // CORS 
+        WebServer.use(Cors({
+            origin: "http://localhost:3000",
+            methods: "GET, POST, PUT, DELETE",
+            credentials: true,
+          }));
+        
+        /*WebServer.all('*', (req, res, next) => {
+            res.header("Access-Control-Allow-Origin", "*");
+            res.header("Access-Control-Allow-Headers", "X-Requested-With");
+            next();
+        });*/
     }
 
     async configSerialization() {
