@@ -1,6 +1,6 @@
 const Login = () => {
     const handleLoginRoute = () => {
-      window.open("/login", "_self");
+        window.open("/login", "_self");
     };
   
     return <button onClick={handleLoginRoute}>Login</button>

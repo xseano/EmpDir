@@ -12,7 +12,7 @@ class Routing {
             // check if the user has authenticated
             if (req.isAuthenticated()) {
                 console.log(req.user);
-                res.render("dashboard.ejs", {name: req.user.displayName});
+                //res.render("dashboard.ejs", {name: req.user.displayName});
             } else {
                 // user needs to relogin
                 res.redirect(process.env.LOGIN_PATH);
@@ -31,20 +31,20 @@ class Routing {
             // we want to acquire and store the users email and basic profile data for use within the application
             // uses: (future) db lookup
             Passport.authenticate('google', {
-                scope: ['email', 'profile']
+                scope: ['email', 'openid', 'profile']
             })
         );
 
         WebServer.get(`${process.env.GOOGLE_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('google', {
-                successRedirect: process.env.DASH_PATH, // proceed to dashboard
+                successRedirect: process.env.SUCCESSFUL_LOGIN_PATH, // proceed to dashboard
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );
 
         WebServer.get(process.env.FAILED_LOGIN_PATH, (req, res) => {
-            res.status(401).json({
+            return res.status(401).json({
                 success: false,
                 message: "failed",
             });
@@ -55,7 +55,7 @@ class Routing {
             if (req.isAuthenticated()) {
                 console.log(req.user);
                 
-                res.status(200).json({
+                return res.status(200).json({
                     success: true,
                     message: "success",
                     user: req.user,
@@ -63,7 +63,7 @@ class Routing {
                 });
             } else {
                 // user needs to relogin
-                res.status(402).json({
+                return res.status(402).json({
                     success: false,
                     message: "failed2",
                 });

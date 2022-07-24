@@ -17,15 +17,12 @@ class Main {
     }
 
     async configSession() {
-        // configure our session management service
+        // configure our session state manager
         WebServer.use(Session({
             secret: process.env.SESSION_SECRET,
-            resave: false,
+            resave: true,
             saveUninitialized: true,
-            cookie: { 
-                secure : false, 
-                maxAge : (process.env.COOKIE_DURATION_HOURS * 60 * 60 * 1000) 
-            }
+            cookie: { maxAge : (process.env.COOKIE_DURATION_HOURS * 60 * 60 * 1000) }
         }));
     }
 
@@ -53,14 +50,15 @@ class Main {
         // configure our passport instance
         WebServer.use(Passport.initialize());
         WebServer.use(Passport.session());
+        WebServer.use(Express.json());
 
         // logging middleware
         WebServer.use(this.logging);
 
         // CORS 
         WebServer.use(Cors({
-            origin: "http://localhost:3000",
-            methods: "GET, POST, PUT, DELETE",
+            origin: "http://127.0.0.1:3000",
+            methods: "GET, POST, PUT, PATCH, DELETE",
             credentials: true,
           }));
         
