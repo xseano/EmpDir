@@ -173,6 +173,10 @@
   cursor: pointer;
 }
 
+.login{
+  background-color: rgb(55, 132, 248);
+}
+
 .google{
   background-color: #df4930;
 }

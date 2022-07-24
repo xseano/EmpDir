@@ -20,12 +20,20 @@ const Login = () => {
             <img src={GoogleIcon} alt="" className="icon" />
             Google
             </div>
+        </div>
+        
+        <div className="center">
+        <div className="line" />
+        <div className="divider">OR</div>
+        </div>
 
+        <div className="right">
             <div className="canvasButton github" onClick={githubLogin}>
             <img src={GithubIcon} alt="" className="icon" />
             Github
             </div>
         </div>
+
         </div>
     </div>
 
