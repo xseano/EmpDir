@@ -38,7 +38,7 @@ class Routing {
         WebServer.get(`${process.env.GOOGLE_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('google', {
-                successRedirect: process.env.SUCCESSFUL_LOGIN_PATH, // proceed to dashboard
+                successRedirect: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}`, // proceed to home
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );
@@ -54,7 +54,7 @@ class Routing {
         WebServer.get(`${process.env.GITHUB_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('github', {
-                successRedirect: process.env.SUCCESSFUL_LOGIN_PATH, // proceed to dashboard
+                successRedirect: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}`, // proceed to home
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );
@@ -67,9 +67,9 @@ class Routing {
             });
         });
 
-        WebServer.get(process.env.SUCCESSFUL_LOGIN_PATH, (req, res) => {
+        WebServer.get(process.env.AUTH_VALIDATION_PATH, (req, res) => {
             // check if the user has authenticated
-            if (req.isAuthenticated()) {                
+            if (req.user) {               
                 return res.status(200).json({
                     status: "success",
                     code: "2000",
