@@ -3,11 +3,11 @@ import GithubIcon from "../img/github.png";
 
 const Login = () => {
     const googleLogin = () => {
-        window.open("http://127.0.0.1:8081/auth/google", "_self");
+        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_GOOGLE_AUTH_PATH}`, "_self");
     };
 
     const githubLogin = () => {
-        window.open("http://127.0.0.1:8081/auth/github", "_self");
+        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_GITHUB_AUTH_PATH}`, "_self");
     };
 
     return (

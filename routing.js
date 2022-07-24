@@ -61,27 +61,30 @@ class Routing {
 
         WebServer.get(process.env.FAILED_LOGIN_PATH, (req, res) => {
             return res.status(401).json({
-                success: false,
-                message: "failed",
+                status: "failed",
+                code: "1000",
+                message: "There was an error authenticating your account, please try again."
             });
         });
 
         WebServer.get(process.env.SUCCESSFUL_LOGIN_PATH, (req, res) => {
             // check if the user has authenticated
-            if (req.isAuthenticated()) {
-                console.log(req.user);
-                
+            if (req.isAuthenticated()) {                
                 return res.status(200).json({
-                    success: true,
-                    message: "success",
-                    user: req.user,
-                    cookies: req.cookies
+                    status: "success",
+                    code: "2000",
+                    message: "Successfully logged in, welcome.",
+                    data: {
+                        user: req.user,
+                        cookies: req.cookies
+                    }
                 });
             } else {
                 // user needs to relogin
-                return res.status(402).json({
-                    success: false,
-                    message: "failed2",
+                return res.status(401).json({
+                    status: "failed",
+                    code: "1001",
+                    message: "We failed to process this request, please try again."
                 });
             }
         });

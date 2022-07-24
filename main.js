@@ -28,7 +28,7 @@ class Main {
 
     async startWebserver() {
         if (process.env.DEV_ENV) {
-            this.server = WebServer.listen(process.env.WEBSERVER_PORT, "127.0.0.1", () => {  
+            this.server = WebServer.listen(process.env.WEBSERVER_PORT, process.env.WEBSERVER_HOST, () => {  
                 this.host = this.server.address().address;
                 this.port = this.server.address().port;     
                 this.login.initialize(this.host, this.port);  
@@ -57,28 +57,18 @@ class Main {
 
         // CORS 
         WebServer.use(Cors({
-            origin: "http://127.0.0.1:3000",
+            origin: `http://${process.env.WEBSERVER_HOST}:${process.env.WEBSERVER_PORT}`,
             methods: "GET, POST, PUT, PATCH, DELETE",
             credentials: true,
-          }));
-        
-        /*WebServer.all('*', (req, res, next) => {
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Headers", "X-Requested-With");
-            next();
-        });*/
+        }));
     }
 
     async configSerialization() {
-        Passport.serializeUser((user, done) => { 
-            console.log(`Serialized:`);
-            console.log(user);        
+        Passport.serializeUser((user, done) => {       
             done(null, user);
         });
 
-        Passport.deserializeUser((user, done) => {
-            console.log(`Deserialized:`);
-            console.log(user);        
+        Passport.deserializeUser((user, done) => {       
             done(null, user);
         });
     }

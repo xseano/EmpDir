@@ -1,6 +1,6 @@
 const Login = () => {
     const handleLoginRoute = () => {
-    	window.open("/login", "_self");
+    	window.open(process.env.REACT_APP_DASH_PATH, "_self");
     };
   
     return <button onClick={handleLoginRoute}>welcome</button>
