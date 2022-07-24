@@ -43,6 +43,22 @@ class Routing {
             })
         );
 
+        WebServer.get(process.env.GITHUB_AUTH_PATH,
+            // we want to acquire and store the users email and basic profile data for use within the application
+            // uses: (future) db lookup
+            Passport.authenticate('github', {
+                scope: ['email', 'profile']
+            })
+        );
+
+        WebServer.get(`${process.env.GITHUB_AUTH_PATH}/callback`, 
+            // bring us to the main dashboard if successful, back to login if not
+            Passport.authenticate('github', {
+                successRedirect: process.env.SUCCESSFUL_LOGIN_PATH, // proceed to dashboard
+                failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
+            })
+        );
+
         WebServer.get(process.env.FAILED_LOGIN_PATH, (req, res) => {
             return res.status(401).json({
                 success: false,

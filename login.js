@@ -2,7 +2,6 @@ class Login {
     constructor(host, port) {
         this.host = null;
         this.port = null;
-        this.authStrategy;
     }
 
     async initialize(host, port) {
@@ -10,15 +9,21 @@ class Login {
         this.port = port;
 
         if (process.env.WANT_GOOGLE_AUTH) {
-            this.authStrategy = Passport.use(new GoogleStrategy({
+            Passport.use(new GoogleStrategy({
                 clientID:     process.env.GOOGLE_CLIENT_ID,
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET,
                 callbackURL: `http://${this.host}:${this.port}${process.env.GOOGLE_AUTH_PATH}/callback`,
                 passReqToCallback: true
               }, this.registerStrategy));
-        } else {
-            this.authStrategy = null;
-            // add alternate authentication strategies (Twitter, etc)
+        }
+
+        if (process.env.WANT_GITHUB_AUTH) {
+            Passport.use(new GitHubStrategy({
+                clientID:     process.env.GITHUB_CLIENT_ID,
+                clientSecret: process.env.GITHUB_CLIENT_SECRET,
+                callbackURL: `http://${this.host}:${this.port}${process.env.GITHUB_AUTH_PATH}/callback`,
+                passReqToCallback: true
+              }, this.registerStrategy));
         }
     }
 
