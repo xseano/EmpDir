@@ -1,6 +1,6 @@
 .navbar {
   height: 50px;
-  background-color: rgba(102, 16, 83, 0.698);
+  background-color: rgba(27, 26, 27, 0.698);
   color: white;
   display: flex;
   align-items: center;
@@ -27,6 +27,13 @@
 .avatar {
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.bigAvatar {
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -98,7 +105,7 @@
   line-height: 24px;
 }
 
-.login {
+.canvas {
   height: calc(100vh - 50px);
   display: flex;
   align-items: center;
@@ -154,7 +161,7 @@
   z-index: -1;
 }
 
-.loginButton{
+.canvasButton{
   width: 150px;
   padding: 15px 25px;
   border-radius: 5px;
@@ -198,7 +205,8 @@ input{
   border-radius: 5px;
 }
 
-.loginTitle{
+.canvasTitle{
+  margin-top: 30px;
   position: absolute;
   top: 150px;
   color:rgb(155, 155, 155)
@@ -221,7 +229,7 @@ input{
     flex-direction: column;
   }
 
-  .loginTitle {
+  .canvasTitle {
     display: none;
   }
 

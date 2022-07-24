@@ -1,9 +1,20 @@
-const Login = () => {
-    const handleLoginRoute = () => {
-    	window.open(process.env.REACT_APP_DASH_PATH, "_self");
-    };
+const Dash = ({ user }) => {
+    return (
+    
+      <div className="canvas">
+          <h1 className="canvasTitle">Welcome {user.displayName}!</h1>
+          <div className="wrapper">
+		  <div className="left">
+		  <img
+                src={user.photos[0].value}
+                alt=""
+                className="bigAvatar"
+            />
+          </div>
+		  </div>
+      </div>
   
-    return <button onClick={handleLoginRoute}>welcome</button>
+    );
   };
   
-  export default Login;
+  export default Dash;

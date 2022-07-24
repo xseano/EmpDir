@@ -3,7 +3,7 @@ import "./app.css";
 import Navbar from "./constructs/navbar";
 import Home from "./pages/home";
 import Login from "./pages/login";
-import Dashboard from "./pages/dash";
+import Dash from "./pages/dash";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 const App = () => {
@@ -21,8 +21,8 @@ const App = () => {
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
-		  <Route path="/dashboard" element={user ? <Dashboard /> : <Login />} />
+          <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
+		  <Route path="/dash" element={user ? <Dash user={user} /> : <Login />} />
         </Routes>
       </div>
     </BrowserRouter>

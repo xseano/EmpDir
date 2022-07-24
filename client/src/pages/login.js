@@ -12,16 +12,16 @@ const Login = () => {
 
     return (
     
-    <div className="login">
-        <h1 className="loginTitle">Login Please</h1>
+    <div className="canvas">
+        <h1 className="canvasTitle">Login Please</h1>
         <div className="wrapper">
         <div className="left">
-            <div className="loginButton google" onClick={googleLogin}>
+            <div className="canvasButton google" onClick={googleLogin}>
             <img src={GoogleIcon} alt="" className="icon" />
             Google
             </div>
 
-            <div className="loginButton github" onClick={githubLogin}>
+            <div className="canvasButton github" onClick={githubLogin}>
             <img src={GithubIcon} alt="" className="icon" />
             Github
             </div>
