@@ -57,16 +57,16 @@ class Main {
 
         // CORS 
         WebServer.use(Cors({
-            origin: `http://${process.env.WEBSERVER_HOST}:${process.env.WEBSERVER_PORT}`,
+            origin: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}`,
             methods: "GET, POST, PUT, PATCH, DELETE",
             credentials: true,
         }));
 
-        WebServer.all('*', (req, res, next) => {
+        /*WebServer.all('*', (req, res, next) => {
             res.header("Access-Control-Allow-Origin", "*");
             res.header("Access-Control-Allow-Headers", "X-Requested-With");
             next();
-        });
+        });*/
     }
 
     async configSerialization() {
