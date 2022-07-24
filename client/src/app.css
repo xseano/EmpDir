@@ -139,7 +139,7 @@
   position: relative;
 }
 
-.or{
+.divider{
   border: 2px solid lightgray;
   border-radius: 50%;
   padding: 10px;
@@ -209,6 +209,10 @@ input{
   margin-top: 30px;
   position: absolute;
   top: 150px;
+  color:rgb(155, 155, 155)
+}
+
+.userInfo {
   color:rgb(155, 155, 155)
 }
 

@@ -11,6 +11,17 @@ const Dash = ({ user }) => {
                 className="bigAvatar"
             />
           </div>
+		  
+			<div className="center">
+			<div className="line" />
+			<div className="divider">•</div>
+			</div>
+
+			<div className="right">
+			<h2 className="userInfo">Username: {user.username}</h2>
+		  	<h2 className="userInfo">URL: {user.profileUrl}</h2>
+			</div>
+
 		  </div>
       </div>
   

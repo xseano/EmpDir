@@ -11,7 +11,7 @@ const Login = () => {
             </div>
         </div>
     
-        );
+    );
 
     
   };
