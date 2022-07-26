@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DefaultAvatar from "../img/avatar/default.png";
 
 const Navbar = ({ user }) => {
     const handleLogout = () => {
@@ -20,7 +21,7 @@ const Navbar = ({ user }) => {
             <ul className="list">
             <li className="listItem">
                 <img
-                src={user.photos[0].value}
+                src={user.photos ? user.photos[0].value : DefaultAvatar}
                 alt=""
                 className="avatar"
                 />

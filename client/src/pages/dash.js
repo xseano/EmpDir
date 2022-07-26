@@ -1,3 +1,5 @@
+import DefaultAvatar from "../img/avatar/default.png";
+
 const Dash = ({ user }) => {
     return (
     
@@ -6,7 +8,7 @@ const Dash = ({ user }) => {
           <div className="wrapper">
 		  <div className="left">
 		  <img
-                src={user.photos[0].value}
+                src={user.photos ? user.photos[0].value : DefaultAvatar}
                 alt=""
                 className="bigAvatar"
             />
@@ -18,8 +20,8 @@ const Dash = ({ user }) => {
 			</div>
 
 			<div className="right">
-			<h2 className="userInfo">Username: {user.username}</h2>
-		  	<h2 className="userInfo">URL: {user.profileUrl}</h2>
+			<h2 className="userInfo">Username: {user.username ? user.username : user.emails[0].value}</h2>
+		  <h2 className="userInfo">URL: {user.profileUrl ? user.profileUrl : "Unavailable." }</h2>
 			</div>
 
 		  </div>
