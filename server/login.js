@@ -14,7 +14,9 @@ class Login {
                 clientSecret: process.env.GOOGLE_CLIENT_SECRET,
                 callbackURL: `http://${this.host}:${this.port}${process.env.GOOGLE_AUTH_PATH}/callback`,
                 passReqToCallback: true
-              }, this.registerStrategy));
+              }, (request, issuer, profile, cb) => {
+                cb(null, profile);
+              }));
         }
 
         if (process.env.WANT_GITHUB_AUTH) {
@@ -23,7 +25,9 @@ class Login {
                 clientSecret: process.env.GITHUB_CLIENT_SECRET,
                 callbackURL: `http://${this.host}:${this.port}${process.env.GITHUB_AUTH_PATH}/callback`,
                 passReqToCallback: true
-              }, this.registerStrategy));
+              }, (request, accessToken, refreshToken, profile, done) => {
+                done(null, profile);
+              }));
         }
     }
 
