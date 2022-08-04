@@ -30,11 +30,6 @@ class Login {
               }));
         }
     }
-
-    async registerStrategy(request, accessToken, refreshToken, profile, done) {
-        return done(null, profile);
-    }
-
 }
 
 module.exports = Login;

@@ -1,0 +1,30 @@
+[
+    {
+      "TagID": 1,
+      "TagLabel": "Boss"
+    },
+    {
+      "TagID": 2,
+      "TagLabel": "VP"
+    },
+    {
+      "TagID": 3,
+      "TagLabel": "HR"
+    },
+    {
+      "TagID": 4,
+      "TagLabel": "VP"
+    },
+    {
+      "TagID": 5,
+      "TagLabel": "Directs"
+    },
+    {
+      "TagID": 6,
+      "TagLabel": "Sales"
+    },
+    {
+      "TagID": 7,
+      "TagLabel": "Project HR"
+    }
+]

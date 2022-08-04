@@ -8,6 +8,7 @@ global.Cors           = require('cors');
 global.Passport       = require('passport');
 global.GoogleStrategy = require('passport-google-oidc');
 global.GitHubStrategy = require('passport-github2');
+global.MySQL          = require('mysql');
 
 // App Globals
 global.Main      = require('./Main');

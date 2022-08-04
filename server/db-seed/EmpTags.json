@@ -1,0 +1,74 @@
+[
+    {
+      "EmployeeID": 101,
+      "TagID": 1
+    },
+    {
+      "EmployeeID": 102,
+      "TagID": 2
+    },
+    {
+      "EmployeeID": 104,
+      "TagID": 2
+    },
+    {
+      "EmployeeID": 106,
+      "TagID": 2
+    },
+    {
+      "EmployeeID": 105,
+      "TagID": 2
+    },
+    {
+      "EmployeeID": 103,
+      "TagID": 3
+    },
+    {
+      "EmployeeID": 115,
+      "TagID": 3
+    },
+    {
+      "EmployeeID": 107,
+      "TagID": 5
+    },
+    {
+      "EmployeeID": 108,
+      "TagID": 5
+    },
+    {
+      "EmployeeID": 109,
+      "TagID": 5
+    },
+    {
+      "EmployeeID": 110,
+      "TagID": 5
+    },
+    {
+      "EmployeeID": 111,
+      "TagID": 6
+    },
+    {
+      "EmployeeID": 112,
+      "TagID": 6
+    },
+    {
+      "EmployeeID": 113,
+      "TagID": 6
+    },
+    {
+      "EmployeeID": 114,
+      "TagID": 6
+    },
+    {
+      "EmployeeID": 110,
+      "TagID": 7
+    },
+    {
+      "EmployeeID": 112,
+      "TagID": 7
+    },
+    {
+      "EmployeeID": 114,
+      "TagID": 7
+    }
+]

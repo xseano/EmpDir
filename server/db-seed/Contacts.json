@@ -1,0 +1,37 @@
+[
+    {
+      "EmployeeID": 101,
+      "Contact": "Yahoo Email:",
+      "ContactAddr": "ceo@fakeCo.com"
+    },
+    {
+      "EmployeeID": 103,
+      "Contact": "Yahoo Email:",
+      "ContactAddr": "vp@fakeCo.com"
+    },
+    {
+      "EmployeeID": 113,
+      "Contact": "Phone 2:",
+      "ContactAddr": "408-876-3339"
+    },
+    {
+      "EmployeeID": 114,
+      "Contact": "Phone 2:",
+      "ContactAddr": "408-876-3338"
+    },
+    {
+      "EmployeeID": 110,
+      "Contact": "GitHub:",
+      "ContactAddr": "github.com/rmahal"
+    },
+    {
+      "EmployeeID": 110,
+      "Contact": "Slack",
+      "ContactAddr": "ga-students.slack.com"
+    },
+    {
+      "EmployeeID": 110,
+      "Contact": "Yahoo Email:",
+      "ContactAddr": "raj@fakeCo.com"
+    }
+  ]
