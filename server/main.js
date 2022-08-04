@@ -61,9 +61,11 @@ class Main {
         });
 
         // create Login table if it doesnt already exist
-        this.db.query(`CREATE TABLE IF NOT EXISTS Login ( SocialID MEDIUMINT, EmployeeID MEDIUMINT )`, (error, result) => {
+        this.db.query(`CREATE TABLE IF NOT EXISTS Login ( SocialID BIGINT, EmployeeID MEDIUMINT )`, (error, result) => {
             if (error) throw error;
         });
+
+        this.routing.registerDatabase(this.db);
 
         if (process.env.WANT_SEED_DB) {
             await this.seedDatabase();

@@ -1,10 +1,14 @@
 class Routing {
     constructor() {
-
+        this.db = null;
     }
 
     async initialize() {
         await this.registerPaths();
+    }
+
+    async registerDatabase(db) {
+        this.db = db;
     }
 
     async registerPaths() {
