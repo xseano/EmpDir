@@ -67,13 +67,14 @@ class Main {
 
         this.routing.registerDatabase(this.db);
 
-        if (process.env.WANT_SEED_DB) {
+        if (process.env.WANT_SEED_DB == "true") {
             await this.seedDatabase();
         }
     }
 
     async seedDatabase() {
         let fs = require('fs');
+        console.log("seeding db");
  
         let contacts = JSON.parse(fs.readFileSync('db-seed/Contacts.json'));
         let empext = JSON.parse(fs.readFileSync('db-seed/EmpExt.json'));
@@ -150,7 +151,7 @@ class Main {
         WebServer.use(Express.json());
 
         // logging middleware
-        WebServer.use(this.logging);
+        //WebServer.use(this.logging);
 
         // CORS 
         WebServer.use(Cors({
