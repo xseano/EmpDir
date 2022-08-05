@@ -71,7 +71,7 @@ class Routing {
             });
         });
 
-        WebServer.get(process.env.AUTH_VALIDATION_PATH, (req, res) => {
+        WebServer.get(process.env.AUTH_VALIDATION_PATH, async (req, res) => {
             // check if the user has authenticated
             if (req.user) {
                 let data = {
@@ -82,46 +82,25 @@ class Routing {
                 };
 
                 let uid = parseInt(req.user.id);
-                console.log(uid);
+                //console.log(uid);
+
+                let emp_id = await this.db.getEmployeeID(uid); 
+                let emp_ext = await this.db.getEmployeeExt(emp_id); 
+
+                console.log(emp_id);
+                console.log(emp_ext);
                 
-                this.db.query(`SELECT EmployeeID FROM Login WHERE SocialID=${uid}`, (error, result) => {
-                    if (error) throw error;
-                    console.log(result[0].EmployeeID);
-
-                    data.EmpID = result[0].EmployeeID;
-
-                    this.db.query(`SELECT * FROM EmpExt WHERE EmployeeID=${data.EmpID}`, (error, result) => {
-                        data.EmpExt = result.map(o => Object.assign({}, o));
-                    });
-
-                    this.db.query(`SELECT * FROM Contacts WHERE EmployeeID=${data.EmpID}`, (error, result) => {
-                        data.Contacts = result.map(o => Object.assign({}, o));
-                        
-                    });
-
-                    this.db.query(`SELECT * FROM EmpTag WHERE EmployeeID=${data.EmpID}`, (error, result) => {
-
-                        for(let attr in result) {
-                            let tag = result[attr];
-
-                            this.db.query(`SELECT * FROM Tags WHERE TagID=${tag.TagID}`, (error, result) => {
-                                for(let attr in result) {
-                                    let tag_label = result[attr].TagLabel;
-                                    data.Tags.push(tag_label);
-                                }
-
-                                console.log(data);
-
-                                return res.status(200).json({
-                                    status: "success",
-                                    code: "2000",
-                                    message: "Successfully logged in, welcome.",
-                                    data: data
-                                });
-                            });
-                        }
-                    });
+                return res.status(200).json({
+                    status: "success",
+                    code: "2000",
+                    message: "Successfully logged in, welcome.",
+                    data: {
+                        user: req.user,
+                        cookies: req.cookies
+                    }
                 });
+
+
             } else {
                 // user needs to relogin
                 return res.status(401).json({

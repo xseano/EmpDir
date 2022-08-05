@@ -14,6 +14,7 @@ global.MySQL          = require('mysql');
 global.Main      = require('./Main');
 global.Login     = require('./Login');
 global.Routing   = require('./Routing');
+global.Database  = require('./Database');
 
 // Config
 global.Config    = require('dotenv').config();
