@@ -1,14 +1,14 @@
 class Routing {
     constructor() {
-        this.db = null;
+        this.database = null;
     }
 
     async initialize() {
         await this.registerPaths();
     }
 
-    async registerDatabase(db) {
-        this.db = db;
+    async registerDatabase(database) {
+        this.database = database;
     }
 
     async registerPaths() {
@@ -74,21 +74,18 @@ class Routing {
         WebServer.get(process.env.AUTH_VALIDATION_PATH, async (req, res) => {
             // check if the user has authenticated
             if (req.user) {
-                let data = {
-                    EmpID: null,
-                    EmpExt: null,
-                    Contacts: null,
-                    Tags: []
-                };
-
                 let uid = parseInt(req.user.id);
-                //console.log(uid);
 
-                let emp_id = await this.db.getEmployeeID(uid); 
-                let emp_ext = await this.db.getEmployeeExt(emp_id); 
+                let emp_id = await this.database.getEmployeeID(uid); 
+                let emp_ext = await this.database.getEmployeeExt(emp_id); 
+                let emp_contacts = await this.database.getContacts(emp_id); 
+                let emp_tags = await this.database.getTags(emp_id);
 
                 console.log(emp_id);
                 console.log(emp_ext);
+                console.log(emp_contacts);
+                console.log(emp_tags);
+                
                 
                 return res.status(200).json({
                     status: "success",

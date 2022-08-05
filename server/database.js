@@ -4,50 +4,35 @@ class Database {
     }
 
     async initialize() {
-        this.connection = MySQL.createConnection({
+        this.connection = await MySQL.createConnection({
             host     : process.env.DATABASE_HOST,
             user     : process.env.DATABASE_USR,
-            password : process.env.DATABASE_PWD
+            password : process.env.DATABASE_PWD,
+            Promise  : Bluebird
         });
-
-        await this.connection.connect();
     }
 
     async setup() {
         // create the db if it doesnt already exist
-        this.connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DATABASE_NAME}`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DATABASE_NAME}`);
 
         // use our chosen db
-        this.connection.query(`USE ${process.env.DATABASE_NAME}`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         // create EmpExt table if it doesnt already exist
-        this.connection.query(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT )`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT )`);
 
         // create Contacts table if it doesnt already exist
-        this.connection.query(`CREATE TABLE IF NOT EXISTS Contacts ( EmployeeID MEDIUMINT, Contact TINYTEXT, ContactAddr VARCHAR(40) )`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Contacts ( EmployeeID MEDIUMINT, Contact TINYTEXT, ContactAddr VARCHAR(40) )`);
 
         // create EmpTag table if it doesnt already exist
-        this.connection.query(`CREATE TABLE IF NOT EXISTS EmpTag ( EmployeeID MEDIUMINT, TagID MEDIUMINT )`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpTag ( EmployeeID MEDIUMINT, TagID MEDIUMINT )`);
 
         // create Tags table if it doesnt already exist
-        this.connection.query(`CREATE TABLE IF NOT EXISTS Tags ( TagID MEDIUMINT, TagLabel TINYTEXT )`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Tags ( TagID MEDIUMINT, TagLabel TINYTEXT )`);
 
         // create Login table if it doesnt already exist
-        this.connection.query(`CREATE TABLE IF NOT EXISTS Login ( SocialID BIGINT, EmployeeID MEDIUMINT )`, (error, result) => {
-            if (error) throw error;
-        });
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Login ( SocialID BIGINT, EmployeeID MEDIUMINT )`);
 
         if (process.env.WANT_SEED_DB == "true") {
             await this.seedDatabase();
@@ -55,38 +40,34 @@ class Database {
     }
 
     async getEmployeeID(usr_id) {
-        this.connection.query(`SELECT EmployeeID FROM Login WHERE SocialID=${usr_id}`, (error, result) => {
-            if (error) throw error;
-            console.log(result[0].EmployeeID);
-            return result[0].EmployeeID;
-        });
+        let [result, rows] = await this.connection.query(`SELECT EmployeeID FROM Login WHERE SocialID=${usr_id}`);
+        return result[0].EmployeeID;
     }
 
     async getEmployeeExt(emp_id) {
-        this.connection.query(`SELECT * FROM EmpExt WHERE EmployeeID=${emp_id}`, (error, result) => {
-            return result[0];
-        });
+        let [result, rows] = await this.connection.execute(`SELECT * FROM EmpExt WHERE EmployeeID=?`, [emp_id]);
+        return result[0];
     }
 
     async getContacts(emp_id) {
-        this.connection.query(`SELECT * FROM Contacts WHERE EmployeeID=${emp_id}`, (error, result) => {
-            return result.map(o => Object.assign({}, o));
-        });
+        let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
+        return result[0];
     }
 
     async getTags(emp_id) {
         let tags = [];
-        this.connection.query(`SELECT * FROM EmpTag WHERE EmployeeID=${emp_id}`, (error, result) => {
-            for(let i in result) {
-                let tag = result[i];
-                this.connection.query(`SELECT * FROM Tags WHERE TagID=${tag.TagID}`, (error, result) => {
-                    for(let i in result) {
-                        let tag_label = result[i].TagLabel;
-                        tags.push(tag_label);
-                    }
-                });
+        let [result, rows] = await this.connection.execute(`SELECT * FROM EmpTag WHERE EmployeeID=?`, [emp_id]);
+
+        for(let i in result) {
+            let tag = result[i];
+            let [result2, rows2] =  await this.connection.execute(`SELECT * FROM Tags WHERE TagID=?`, [tag.TagID]);
+            for(let i in result2) {
+                let tag_label = result2[i].TagLabel;
+                tags.push(tag_label);
             }
-        });
+        }
+
+        return tags;
     }
 
     async seedDatabase() {
@@ -100,34 +81,26 @@ class Database {
 
         for(let attr in contacts) {
             let contact = contacts[attr];
-            this.connection.query(`INSERT INTO Contacts values(?, ?, ?)`, [contact.EmployeeID, contact.Contact, contact.ContactAddr], (error, result) => {
-                if (error) throw error;
-            });
-            //console.log(attr, contact);
+            let [result, rows] = await this.connection.execute(`INSERT INTO Contacts values(?, ?, ?)`, [contact.EmployeeID, contact.Contact, contact.ContactAddr]);
+            //console.log(result, rows);
         }
 
         for(let attr in empext) {
             let employee = empext[attr];
-            this.connection.query(`INSERT INTO EmpExt values(?, ?, ?, ?)`, [employee.EmployeeID, employee.AvatarURL, employee.BannerURL, employee.BioText], (error, result) => {
-                if (error) throw error;
-            });
-            //console.log(attr, employee);
+            let [result, rows] = await this.connection.execute(`INSERT INTO EmpExt values(?, ?, ?, ?)`, [employee.EmployeeID, employee.AvatarURL, employee.BannerURL, employee.BioText]);
+            //console.log(result, rows);
         }
 
         for(let attr in emptags) {
             let emptag = emptags[attr];
-            this.connection.query(`INSERT INTO EmpTag values(?, ?)`, [emptag.EmployeeID, emptag.TagID], (error, result) => {
-                if (error) throw error;
-            });
-            //console.log(attr, emptag);
+            let [result, rows] = await this.connection.execute(`INSERT INTO EmpTag values(?, ?)`, [emptag.EmployeeID, emptag.TagID]);
+            //console.log(result, rows);
         }
         
         for(let attr in tags) {
             let tag = tags[attr];
-            this.connection.query(`INSERT INTO Tags values(?, ?)`, [tag.TagID, tag.TagLabel], (error, result) => {
-                if (error) throw error;
-            });
-            //console.log(attr, tag);
+            let [result, rows] = await this.connection.execute(`INSERT INTO Tags values(?, ?)`, [tag.TagID, tag.TagLabel]);
+            //console.log(result, rows);
         }
     }
 }

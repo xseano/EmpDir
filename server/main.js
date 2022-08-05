@@ -1,5 +1,3 @@
-const Database = require("./database");
-
 class Main {
     constructor() {
         this.server = null;
@@ -17,7 +15,7 @@ class Main {
         await this.configServer();
         await this.startWebserver();
         await this.configSerialization();
-        
+
         await this.database.initialize();
         await this.database.setup();
         
@@ -62,7 +60,7 @@ class Main {
         WebServer.use(Express.json());
 
         // logging middleware
-        //WebServer.use(this.logging);
+        WebServer.use(this.logging);
 
         // CORS 
         WebServer.use(Cors({
