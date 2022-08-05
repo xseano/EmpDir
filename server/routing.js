@@ -80,12 +80,6 @@ class Routing {
                 let emp_ext = await this.database.getEmployeeExt(emp_id); 
                 let emp_contacts = await this.database.getContacts(emp_id); 
                 let emp_tags = await this.database.getTags(emp_id);
-
-                console.log(emp_id);
-                console.log(emp_ext);
-                console.log(emp_contacts);
-                console.log(emp_tags);
-                
                 
                 return res.status(200).json({
                     status: "success",
@@ -93,6 +87,12 @@ class Routing {
                     message: "Successfully logged in, welcome.",
                     data: {
                         user: req.user,
+                        employee: {
+                            id: emp_id,
+                            ext: emp_ext,
+                            contacts: emp_contacts,
+                            tags: emp_tags
+                        },
                         cookies: req.cookies
                     }
                 });
