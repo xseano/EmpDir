@@ -1,3 +1,5 @@
+const HR = require("./hr");
+
 class Main {
     constructor() {
         this.server = null;
@@ -8,6 +10,7 @@ class Main {
         this.login = new Login();
         this.routing = new Routing();
         this.database = new Database();
+        this.hr = new HR();
     }
 
     async initialize() {
@@ -18,9 +21,11 @@ class Main {
 
         await this.database.initialize();
         await this.database.setup();
+        if (process.env.WANT_SEED_DB == "true") { await this.database.seed() }
         
         await this.routing.initialize();
         await this.routing.registerDatabase(this.database);
+        await this.routing.registerHR(this.hr);
     }
 
     async configSession() {

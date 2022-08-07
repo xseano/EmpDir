@@ -33,10 +33,6 @@ class Database {
 
         // create Login table if it doesnt already exist
         await this.connection.execute(`CREATE TABLE IF NOT EXISTS Login ( SocialID BIGINT, EmployeeID MEDIUMINT )`);
-
-        if (process.env.WANT_SEED_DB == "true") {
-            await this.seedDatabase();
-        }
     }
 
     async getEmployeeID(usr_id) {
@@ -70,7 +66,7 @@ class Database {
         return tags;
     }
 
-    async seedDatabase() {
+    async seed() {
         let fs = require('fs');
         console.log("seeding db");
  

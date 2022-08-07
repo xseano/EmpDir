@@ -10,12 +10,14 @@ global.GoogleStrategy = require('passport-google-oidc');
 global.GitHubStrategy = require('passport-github2');
 global.MySQL          = require('mysql2/promise');
 global.Bluebird       = require('bluebird');
+global.Fetch          = require('node-fetch');
 
 // App Globals
 global.Main      = require('./Main');
 global.Login     = require('./Login');
 global.Routing   = require('./Routing');
 global.Database  = require('./Database');
+global.HR = require('./HR');
 
 // Config
 global.Config    = require('dotenv').config();
