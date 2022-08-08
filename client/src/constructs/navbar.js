@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import DefaultAvatar from "../img/avatar/default.png";
 
-const Navbar = ({ user }) => {
+const Navbar = ({ user, employee, hr }) => {
     const handleLogout = () => {
         window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_LOGOUT_PATH}`, "_self");
     };
@@ -30,14 +30,29 @@ const Navbar = ({ user }) => {
                         <a className="nav-link" href="#"><i className="fas fa-bell alet-icon"></i> Notifications</a>
                     </li>
                     <li className="nav-item dropdown">
+                    {user ? (
+                        <>
                         <a className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img className="avtar" src="assets/images/avatar.png" />Tom Hard
+                            <img className="avtar" src={employee.ext.AvatarURL} />{hr.emp.FirstName} {hr.emp.LastName}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a className="dropdown-item" href="#">Dashboard</a>
                             <a className="dropdown-item" href="#">Settings</a>
                             <a className="dropdown-item" onClick={handleLogout} href="#">Logout</a>
                         </div>
+                        </>
+                    ) : (
+                        <>
+                        <a className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img className="avtar" src="assets/images/avatar.png" />Tom Hardy
+                        </a>
+                        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a className="dropdown-item" href="#">Dashboard</a>
+                            <a className="dropdown-item" href="#">Settings</a>
+                            <a className="dropdown-item" onClick={handleLogout} href="#">Logout</a>
+                        </div>
+                        </>
+                        )}
                     </li>
                 </ul>
             </div>

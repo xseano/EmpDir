@@ -24,6 +24,7 @@ const App = () => {
 			let employee = data.employee;
 			let hr = data.hr;
 
+			console.log(data);
 			setUser(user);
 			setEmployee(employee);
 			setHR(hr);
@@ -33,11 +34,11 @@ const App = () => {
 
   return (
     <BrowserRouter>
-        <Navbar user={user} />
+        <Navbar user={user} employee={employee} hr={hr} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
-		  <Route path="/dash" element={user ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+		  <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
         </Routes>
     </BrowserRouter>
   );

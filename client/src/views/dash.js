@@ -11,7 +11,7 @@ const Dash = ({ user, employee, hr }) => {
                             <li className="breadcrumb-item"><a href="#">Board of Directors </a></li>
                             <li className="breadcrumb-item"><a href="#">Mary Smith </a></li>
                             <li className="breadcrumb-item"><a href="#">Jeff Bean</a></li>
-                            <li className="breadcrumb-item active" aria-current="page">Tom Ford</li>
+                            <li className="breadcrumb-item active" aria-current="page">{hr.emp.FirstName} {hr.emp.LastName}</li>
                         </ol>
                     </nav>
                 </div>
@@ -25,14 +25,14 @@ const Dash = ({ user, employee, hr }) => {
                 <div className="col-lg-9 text-left">
                     <div className="row profile-part-1">
                         <div className="col-lg-3 col-md-4 col-sm-5">
-                            <div className="profile-pic"><img src="assets/images/profile-pic.png" /></div>
+                            <div className="profile-pic"><img src={employee.ext.AvatarURL} /></div>
                         </div>
                         <div className="col-lg-9 col-md-8 col-sm-7">
                             <h1 className="employee-name">
-                                <span className="firstname">Tom</span>
-                                <span className="lastname">Ford</span>
+                                <span className="firstname">{hr.emp.FirstName} </span>
+                                <span className="lastname">{hr.emp.LastName}</span>
                             </h1>
-                            <div className="designation">Senior Director, NA</div>
+                            <div className="designation">{hr.emp.JobTitle}, {hr.emp.State}</div>
                             <div className="more-deatils">
                                 <span className="flag"><img src="assets/images/united-states.svg" /></span>
                                 <span className="time">NV,US 12PM, </span>
@@ -45,7 +45,7 @@ const Dash = ({ user, employee, hr }) => {
                             <h2 className="section-tittle">
                                 About
                             </h2>
-                            <p className="para-text">I manage the ACME Widget sales team, focused on North America, including lead generation and account management</p>
+                            <p className="para-text">{employee.ext.BioText}</p>
                         </div>
                     </div>
                     <div className="row profile-part-3">
@@ -55,10 +55,10 @@ const Dash = ({ user, employee, hr }) => {
                             </h2>
                             <ul className="list-unstyled">
                                 <li className="media">
-                                    <img className="mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
+                                    <img className="mr-3 rounded-circle" src={"assets/images/dp.png"} alt="Generic placeholder image" />
                                     <div className="media-body">
-                                        <h5 className="mt-0 mb-1">Jeff Bean,</h5>
-                                        <span>Vice President, WW Sales</span><br />
+                                        <h5 className="mt-0 mb-1">{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</h5>
+                                        <span>{hr.mgr.main.JobTitle}, {hr.mgr.main.Org}</span><br />
                                         <span>Widget Division</span>
                                     </div>
                                 </li>
@@ -73,19 +73,19 @@ const Dash = ({ user, employee, hr }) => {
                             <li className="media">
                                 <img className="mr-3" src="assets/images/email.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">tom.ford@acme.com</h5>
+                                    <h5 className="mt-0 mb-1">{hr.emp.Email}</h5>
                                 </div>
                             </li>
                             <li className="media">
                                 <img className="mr-3" src="assets/images/phone.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">+1 702-867-5309</h5>
+                                    <h5 className="mt-0 mb-1">+1 {hr.emp.Phone}</h5>
                                 </div>
                             </li>
                             <li className="media">
                                 <img className="mr-3" src="assets/images/mobile.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">+1 702-123-4567</h5>
+                                    <h5 className="mt-0 mb-1">+1 {hr.emp.Phone}</h5>
                                 </div>
                             </li>
                         </ul>
@@ -100,7 +100,7 @@ const Dash = ({ user, employee, hr }) => {
 
                     <div className="card card3">
                         <h3>Address</h3>
-                        <p>789 Main Street, Las Vegas, NV 89104</p>
+                        <p>{hr.emp.Street}, {hr.emp.City}, {hr.emp.State} {hr.emp.ZipCode}</p>
                     </div>
 
                     <div className="card card4">

@@ -87,8 +87,13 @@ class Routing {
                 let emp_tags = await this.database.getTags(emp_id);
 
                 let hr_emp = await this.hr.getEmployee(emp_id);
+
                 let hr_mgr = await this.hr.getEmployee(hr_emp.ManagerID);
+                let hr_mgr_ext = await this.database.getEmployeeExt(hr_emp.ManagerID); 
+
                 let hr_rep = await this.hr.getEmployee(hr_emp.HRrepID);
+                let hr_rep_ext = await this.database.getEmployeeExt(hr_emp.HRrepID); 
+
                 let hr_directs = await this.hr.getDirects(emp_id);
                 
                 return res.status(200).json({
@@ -105,8 +110,14 @@ class Routing {
                         },
                         hr: {
                             emp: hr_emp,
-                            mgr: hr_mgr,
-                            rep: hr_rep,
+                            mgr: {
+                                main: hr_mgr,
+                                ext: hr_mgr_ext
+                            },
+                            rep: {
+                                main: hr_rep,
+                                ext: hr_rep_ext
+                            },
                             directs: hr_directs
                         },
                         cookies: req.cookies
