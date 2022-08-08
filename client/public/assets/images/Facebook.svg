@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="50" height="50" rx="25"></rect>
+        <path d="M0,25 C0,11.1928813 11.1898454,0 25,0 C38.8071187,0 50,11.1898454 50,25 C50,38.8071187 38.8101546,50 25,50 C11.1928813,50 0,38.8101546 0,25 Z M2,25 C2,37.7053422 12.2974508,48 25,48 C37.7053422,48 48,37.7025492 48,25 C48,12.2946578 37.7025492,2 25,2 C12.2946578,2 2,12.2974508 2,25 Z" id="path-3"></path>
+        <path d="M15.71886,22.4 L15.71886,14.7365006 L18.1982652,14.7365006 L18.566741,11.7515643 L15.71886,11.7515643 L15.71886,9.8438007 C15.71886,8.98076477 15.949938,8.39026651 17.1428005,8.39026651 L18.6666667,8.39026651 L18.6666667,5.71680185 C18.4043618,5.6778679 17.4987856,5.6 16.4495663,5.6 C14.251202,5.6 12.7523172,6.99513326 12.7523172,9.55179606 L12.7523172,11.7580533 L10.2666667,11.7580533 L10.2666667,14.7429896 L12.7523172,14.7429896 L12.7523172,22.4 L15.71886,22.4 Z" id="path-5"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Employee-Profile" transform="translate(-764.000000, -1886.000000)">
+            <g id="Footer" transform="translate(0.000000, 1851.000000)">
+                <g id="Social" transform="translate(624.000000, 35.000000)">
+                    <g id="1.-Buttons/2.-Default-Button/4.-Rounded-Button" transform="translate(140.000000, 0.000000)">
+                        <g id="6.-Elements/2.-Base/1.-Base/Fill/Radius-30">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Blue" mask="url(#mask-2)" fill="#0078FF" fill-rule="evenodd">
+                                <rect id="Base" x="0" y="0" width="50" height="50"></rect>
+                            </g>
+                        </g>
+                        <g id="6.-Elements/2.-Base/1.-Base/Outline/Radius-30">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Gray/Gray-92" mask="url(#mask-4)" fill="#EBEBEB" fill-rule="evenodd">
+                                <rect id="Base" x="0" y="0" width="50" height="50"></rect>
+                            </g>
+                        </g>
+                        <g id="3.-Icons/ic_facebook" transform="translate(11.000000, 11.000000)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="facebook-icon"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Gray/Gray-70" mask="url(#mask-6)" fill="#B3B3B3" fill-rule="evenodd">
+                                <g transform="translate(2.800000, 2.800000)" id="Base">
+                                    <rect x="0" y="0" width="22" height="22"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

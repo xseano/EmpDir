@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Twitter</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="50" height="50" rx="25"></rect>
+        <path d="M0,25 C0,11.1928813 11.1898454,0 25,0 C38.8071187,0 50,11.1898454 50,25 C50,38.8071187 38.8101546,50 25,50 C11.1928813,50 0,38.8101546 0,25 Z M2,25 C2,37.7053422 12.2974508,48 25,48 C37.7053422,48 48,37.7025492 48,25 C48,12.2946578 37.7025492,2 25,2 C12.2946578,2 2,12.2974508 2,25 Z" id="path-3"></path>
+        <path d="M22.4,9.12351282 C21.7819205,9.40512821 21.1181545,9.59520513 20.4202551,9.67974359 C21.131808,9.24251282 21.6784696,8.55005128 21.9363091,7.72512821 C21.2699175,8.12951282 20.5326332,8.42458974 19.7475619,8.58235897 C19.1184546,7.89582051 18.2225806,7.46666667 17.2306077,7.46666667 C15.3270068,7.46666667 13.7846962,9.04866667 13.7846962,11.0005897 C13.7846962,11.277359 13.8146287,11.5476667 13.8734434,11.8061282 C11.0088522,11.6585897 8.46931733,10.2515897 6.76894224,8.11335897 C6.47276819,8.63566667 6.30262566,9.24251282 6.30262566,9.89028205 C6.30262566,11.1168974 6.91125281,12.1981282 7.83548387,12.8324359 C7.27096774,12.8135897 6.73953488,12.6552821 6.2747937,12.390359 C6.27426857,12.4048974 6.27426857,12.4205128 6.27426857,12.4345128 C6.27426857,14.147359 7.46211553,15.5758974 9.03908477,15.9005897 C8.75026257,15.9808205 8.44568642,16.0244359 8.13113278,16.0244359 C7.90847712,16.0244359 7.69317329,16.002359 7.48312078,15.9614359 C7.92108027,17.3646667 9.19452363,18.3866667 10.7021755,18.4157436 C9.52325581,19.3634359 8.03713428,19.929359 6.42235559,19.929359 C6.14403601,19.929359 5.86939235,19.9126667 5.6,19.8798205 C7.12498125,20.881359 8.93668417,21.4666667 10.8833458,21.4666667 C17.2227307,21.4666667 20.6901725,16.0815128 20.6901725,11.4108974 C20.6901725,11.2579744 20.6859715,11.1050513 20.6796699,10.9532051 C21.3534134,10.4551282 21.9373593,9.83320513 22.4,9.12351282 Z" id="path-5"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Employee-Profile" transform="translate(-624.000000, -1886.000000)">
+            <g id="Footer" transform="translate(0.000000, 1851.000000)">
+                <g id="Social" transform="translate(624.000000, 35.000000)">
+                    <g id="1.-Buttons/2.-Default-Button/4.-Rounded-Button">
+                        <g id="6.-Elements/2.-Base/1.-Base/Fill/Radius-30">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Blue" mask="url(#mask-2)" fill="#0078FF" fill-rule="evenodd">
+                                <rect id="Base" x="0" y="0" width="50" height="50"></rect>
+                            </g>
+                        </g>
+                        <g id="6.-Elements/2.-Base/1.-Base/Outline/Radius-30">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="Mask"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Gray/Gray-92" mask="url(#mask-4)" fill="#EBEBEB" fill-rule="evenodd">
+                                <rect id="Base" x="0" y="0" width="50" height="50"></rect>
+                            </g>
+                        </g>
+                        <g id="3.-Icons/ic_twitter" transform="translate(11.000000, 11.000000)">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="twitter-icon"></g>
+                            <g id="5.-Colors-and-Gradients/1.-Colors/Gray/Gray-70" mask="url(#mask-6)" fill="#B3B3B3" fill-rule="evenodd">
+                                <g transform="translate(2.800000, 2.800000)" id="Base">
+                                    <rect x="0" y="0" width="22" height="22"></rect>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
