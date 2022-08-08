@@ -47,7 +47,7 @@ class Database {
 
     async getContacts(emp_id) {
         let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
-        return result[0];
+        return result;
     }
 
     async getTags(emp_id) {

@@ -1,7 +1,15 @@
 import React, { Fragment } from 'react';
 
 const Dash = ({ user, employee, hr }) => {
+
+    let contacts = [];
+    employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
+
+    let tags = [];
+    employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
+
     return (
+        <>
         <div>
             <div className="container">
             <div className="row">
@@ -18,7 +26,7 @@ const Dash = ({ user, employee, hr }) => {
             </div>
         </div>
 
-        <div className="cover-pic"></div>
+        <div className="cover-pic" style={{backgroundImage: `url(${employee.ext.BannerURL})`}}></div>
 
         <div className="container">
             <div className="row relative_row">
@@ -93,9 +101,7 @@ const Dash = ({ user, employee, hr }) => {
 
                     <div className="card card2">
                         <h3>More Info</h3>
-                        <p><strong>Slack :</strong> @tomford</p>
-                        <p><strong>Con Call :</strong> 5672341</p>
-                        <p><strong>Github :</strong> github.com/tomford</p>
+                        {contacts}
                     </div>
 
                     <div className="card card3">
@@ -105,11 +111,7 @@ const Dash = ({ user, employee, hr }) => {
 
                     <div className="card card4">
                         <h3>Tags</h3>
-                        <a className="tags" href="#">North America</a>
-                        <a className="tags" href="#">Sales </a>
-                        <a className="tags" href="#">Starbucks</a>
-                        <a className="tags" href="#">Account Management</a>
-                        <a className="tags" href="#">Lead Generation </a>
+                        {tags}
                     </div>
                 </div>
                 <div className="col-lg-9">
@@ -215,14 +217,14 @@ const Dash = ({ user, employee, hr }) => {
                             <h2 className="section-tittle">
                                 Additional Information
                             </h2>
-                            <p className="additional-info"><span className="span1">HR Manager</span><span className="span2">Stacy Knight</span></p>
+                            <p className="additional-info"><span className="span1">HR Manager</span><span className="span2">{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</span></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         </div>
-  
+        </>
     );
   };
   
