@@ -87,8 +87,8 @@ class Routing {
                 let emp_tags = await this.database.getTags(emp_id);
 
                 let hr_emp = await this.hr.getEmployee(emp_id);
-                let hr_mgr = await this.hr.getManager(hr_emp.ManagerID);
-                let hr_rep = await this.hr.getHRRep(hr_emp.HRrepID);
+                let hr_mgr = await this.hr.getEmployee(hr_emp.ManagerID);
+                let hr_rep = await this.hr.getEmployee(hr_emp.HRrepID);
                 let hr_directs = await this.hr.getDirects(emp_id);
                 
                 return res.status(200).json({
