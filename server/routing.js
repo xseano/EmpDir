@@ -92,7 +92,7 @@ class Routing {
                 let hr_mgr_ext = await this.database.getEmployeeExt(hr_emp.ManagerID); 
 
                 let hr_rep = await this.hr.getEmployee(hr_emp.HRrepID);
-                let hr_rep_ext = await this.database.getEmployeeExt(hr_emp.HRrepID); 
+                let hr_rep_ext = await this.database.getEmployeeExt(hr_emp.HRrepID);
 
                 let hr_directs = await this.hr.getDirects(emp_id);
                 

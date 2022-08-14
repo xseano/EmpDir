@@ -1,8 +1,8 @@
 [
     {
-      "EmployeeID": 101,
+      "EmployeeID": 1001,
       "Contact": "Yahoo Email:",
-      "ContactAddr": "ceo@fakeCo.com"
+      "ContactAddr": "xseano@fakeCo.com"
     },
     {
       "EmployeeID": 103,
@@ -15,14 +15,14 @@
       "ContactAddr": "408-876-3339"
     },
     {
-      "EmployeeID": 114,
+      "EmployeeID": 1001,
       "Contact": "Phone 2:",
       "ContactAddr": "408-876-3338"
     },
     {
-      "EmployeeID": 110,
+      "EmployeeID": 1001,
       "Contact": "GitHub:",
-      "ContactAddr": "github.com/rmahal"
+      "ContactAddr": "github.com/xseano"
     },
     {
       "EmployeeID": 110,
@@ -32,6 +32,6 @@
     {
       "EmployeeID": 110,
       "Contact": "Yahoo Email:",
-      "ContactAddr": "raj@fakeCo.com"
+      "ContactAddr": "xseano@fakeCo.com"
     }
   ]

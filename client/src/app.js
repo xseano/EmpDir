@@ -22,15 +22,23 @@ const App = () => {
         let data = res.data;
         console.log(data);
         
-        setUser(data.user);
-        setEmployee(data.employee);
-        setHR(data.hr);
+        if (data) {
+          setUser(data.user);
+          setEmployee(data.employee);
+          setHR(data.hr);
+        }
 		  });
     }
     
   }, []);  
 
-
+  const ProtectedRoute = ({ user, type, redirectPath }) => {
+    if (user) {
+      //if (type == "no-auth") { return <Navigate to={redirectPath} replace />; }
+    } else if (!user) {
+      //if (type == "auth") { return <Navigate to={redirectPath} replace />; }
+    }
+  };
 
   return (
     <BrowserRouter>
