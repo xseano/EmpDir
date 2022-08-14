@@ -1,12 +1,32 @@
 import React, { Fragment } from 'react';
+import { useEffect, useState } from "react";
 
 const Dash = ({ user, employee, hr }) => {
+    const [time, setTime] = useState(null);
+    const [day, setDay] = useState(null);
 
     let contacts = [];
     employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
 
     let tags = [];
     employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
+
+    useEffect((time, day) => {
+        if ((!time) || (!day))
+        {
+            fetch(`https://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TZDB_KEY}&format=json&by=zone&zone=${hr.emp.TimeZone}`, {mode: 'cors'})
+            .then(response => response.json())
+            .then(res => { 
+                let date = new Date(res.formatted);
+                let time = date.toLocaleTimeString(navigator.language, {hour: '2-digit'});
+                let day = new Intl.DateTimeFormat('en-US', { weekday: 'short'}).format(date);
+                    day = day.toUpperCase();
+
+                setTime(time);
+                setDay(day);
+            });
+        }
+    }, []);
 
     return (
         <>
@@ -42,9 +62,9 @@ const Dash = ({ user, employee, hr }) => {
                             </h1>
                             <div className="designation">{hr.emp.JobTitle}, {hr.emp.State}</div>
                             <div className="more-deatils">
-                                <span className="flag"><img src="assets/images/united-states.svg" /></span>
-                                <span className="time">NV,US 12PM, </span>
-                                <span className="day">SUN</span>
+                                <span className="flag"><img src="assets/images/united-states.svg" /> </span>
+                                <span className="time">{hr.emp.State} {hr.emp.CountryCode}, {time} </span>
+                                <span className="day">{day}</span>
                             </div>
                         </div>
                     </div>

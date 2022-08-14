@@ -19,18 +19,18 @@ const App = () => {
       fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_AUTH_VALIDATION_PATH}`, {credentials: 'include'})
 		  .then(response => response.json())
 		  .then(res => {
-			let data = res.data;
-			let user = data.user;
-			let employee = data.employee;
-			let hr = data.hr;
-
-			console.log(data);
-			setUser(user);
-			setEmployee(employee);
-			setHR(hr);
-		});
+        let data = res.data;
+        console.log(data);
+        
+        setUser(data.user);
+        setEmployee(data.employee);
+        setHR(data.hr);
+		  });
     }
+    
   }, []);  
+
+
 
   return (
     <BrowserRouter>
@@ -38,7 +38,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
-		  <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
         </Routes>
     </BrowserRouter>
   );
