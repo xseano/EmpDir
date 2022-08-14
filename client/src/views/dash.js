@@ -11,6 +11,9 @@ const Dash = ({ user, employee, hr }) => {
     let tags = [];
     employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
 
+    let mgr_chain = [];
+    hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href="#">{mgr.name}</a></li>)});
+
     let directs = [];
     hr.directs.forEach((direct) => {directs.push(
         <li className="media my-4">
@@ -46,9 +49,7 @@ const Dash = ({ user, employee, hr }) => {
                 <div className="col-lg-12 text-left">
                     <nav className="custom-breadcrumb" aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><a href="#">Board of Directors </a></li>
-                            <li className="breadcrumb-item"><a href="#">Mary Smith </a></li>
-                            <li className="breadcrumb-item"><a href="#">Jeff Bean</a></li>
+                            {mgr_chain}
                             <li className="breadcrumb-item active" aria-current="page">{hr.emp.FirstName} {hr.emp.LastName}</li>
                         </ol>
                     </nav>
