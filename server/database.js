@@ -20,7 +20,7 @@ class Database {
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         // create EmpExt table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT NOT NULL, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT, PRIMARY KEY (EmployeeID) )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT NOT NULL, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT, MobilePhone VARCHAR(12), PRIMARY KEY (EmployeeID) )`);
 
         // create Contacts table if it doesnt already exist
         await this.connection.execute(`CREATE TABLE IF NOT EXISTS Contacts ( EmployeeID MEDIUMINT, Contact TINYTEXT, ContactAddr VARCHAR(40) NOT NULL )`);
@@ -83,7 +83,7 @@ class Database {
 
         for(let attr in empext) {
             let employee = empext[attr];
-            let [result, rows] = await this.connection.execute(`INSERT INTO EmpExt values(?, ?, ?, ?)`, [employee.EmployeeID, employee.AvatarURL, employee.BannerURL, employee.BioText]);
+            let [result, rows] = await this.connection.execute(`INSERT INTO EmpExt values(?, ?, ?, ?, ?)`, [employee.EmployeeID, employee.AvatarURL, employee.BannerURL, employee.BioText, employee.MobilePhone]);
             //console.log(result, rows);
         }
 

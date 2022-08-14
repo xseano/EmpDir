@@ -1,92 +1,107 @@
 [
     {
       "EmployeeID": 101,
-      "AvatarURL": "_https://cdn.images.express.co.uk/img/dynamic/galleries/x701/389530.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "The CEO of the company"
+      "AvatarURL": "https://cdn.images.express.co.uk/img/dynamic/galleries/x701/389530.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "The CEO of the company",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 103,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "The HR Boss"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "The HR Boss",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 115,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "The HR Rep"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "The HR Rep",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 102,
-      "AvatarURL": "_https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Operations"
+      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "VP Operations",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 104,
-      "AvatarURL": "_https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Finance"
+      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "VP Finance",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 105,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "VP Engineering"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "VP Engineering",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 106,
-      "AvatarURL": "_https://upload.wikimedia.org/wikipedia/commons/f/f2/Abraham_Lincoln_O-55%2C_1861-crop.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Sales"
+      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Abraham_Lincoln_O-55%2C_1861-crop.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "VP Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 107,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "Direct Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "Direct Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 108,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "Direct Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "Direct Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 109,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "Direct Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "Direct Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 110,
-      "AvatarURL": "_https://avatars0.githubusercontent.com/u/15217218?s=460&v=4.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "Direct Sales"
+      "AvatarURL": "https://avatars0.githubusercontent.com/u/15217218?s=460&v=4.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "Direct Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 111,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "SalesPerson Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 112,
-      "AvatarURL": "_https://upload.wikimedia.org/wikipedia/commons/1/1e/Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales"
+      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg",
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "SalesPerson Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 113,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "SalesPerson Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
+      "BioText": "SalesPerson Sales",
+      "MobilePhone": "408-123-4567"
     },
     {
       "EmployeeID": 114,
       "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "_https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales"
+      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
+      "BioText": "SalesPerson Sales",
+      "MobilePhone": "408-123-4567"
     }
   ]
