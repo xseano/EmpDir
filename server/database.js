@@ -98,6 +98,14 @@ class Database {
             let [result, rows] = await this.connection.execute(`INSERT INTO Tags values(?, ?)`, [tag.TagID, tag.TagLabel]);
             //console.log(result, rows);
         }
+
+        if ((process.env.GITHUB_SOCIAL_ID) && (process.env.EMPLOYEE_ID)) {
+            let [result, rows] = await this.connection.execute(`INSERT INTO Login values(?, ?)`, [process.env.GITHUB_SOCIAL_ID, process.env.EMPLOYEE_ID]);
+        }
+
+        if ((process.env.GOOGLE_SOCIAL_ID) && (process.env.EMPLOYEE_ID)) {
+            let [result, rows] = await this.connection.execute(`INSERT INTO Login values(?, ?)`, [process.env.GOOGLE_SOCIAL_ID, process.env.EMPLOYEE_ID]);
+        }
     }
 }
 
