@@ -20,19 +20,19 @@ class Database {
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         // create EmpExt table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpExt ( EmployeeID MEDIUMINT NOT NULL, AvatarURL LONGTEXT, BannerURL LONGTEXT, BioText TEXT, PRIMARY KEY (EmployeeID) )`);
 
         // create Contacts table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Contacts ( EmployeeID MEDIUMINT, Contact TINYTEXT, ContactAddr VARCHAR(40) )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Contacts ( EmployeeID MEDIUMINT, Contact TINYTEXT, ContactAddr VARCHAR(40) NOT NULL )`);
 
         // create EmpTag table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpTag ( EmployeeID MEDIUMINT, TagID MEDIUMINT )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS EmpTag ( EmployeeID MEDIUMINT, TagID MEDIUMINT NOT NULL )`);
 
         // create Tags table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Tags ( TagID MEDIUMINT, TagLabel TINYTEXT )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Tags ( TagID MEDIUMINT NOT NULL, TagLabel TINYTEXT )`);
 
         // create Login table if it doesnt already exist
-        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Login ( SocialID BIGINT, EmployeeID MEDIUMINT )`);
+        await this.connection.execute(`CREATE TABLE IF NOT EXISTS Login ( SocialID VARCHAR(40) NOT NULL, EmployeeID MEDIUMINT )`);
     }
 
     async getEmployeeID(usr_id) {

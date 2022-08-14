@@ -1,5 +1,3 @@
-const HR = require("./hr");
-
 class Main {
     constructor() {
         this.server = null;
