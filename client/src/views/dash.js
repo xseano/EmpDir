@@ -11,6 +11,16 @@ const Dash = ({ user, employee, hr }) => {
     let tags = [];
     employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
 
+    let directs = [];
+    hr.directs.forEach((direct) => {directs.push(
+        <li className="media my-4">
+            <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
+            <div className="media-body">
+                <h5 className="mt-0 mb-1">{direct.FirstName} {direct.LastName}</h5>
+            </div>
+        </li>
+    )});
+
     useEffect((time, day) => {
         if ((!time) || (!day))
         {
@@ -141,8 +151,8 @@ const Dash = ({ user, employee, hr }) => {
                                 Reports
                                 <nav className="custom-breadcrumb" aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="#">11 Directs</a></li>
-                                        <li className="breadcrumb-item"><a href="#">11 Total </a></li>
+                                        <li className="breadcrumb-item"><a href="#">{directs.length} Directs</a></li>
+                                        <li className="breadcrumb-item"><a href="#">{directs.length} Total </a></li>
                                         <li className="breadcrumb-item active" aria-current="page">Org Chart</li>
                                     </ol>
                                 </nav>
@@ -150,86 +160,13 @@ const Dash = ({ user, employee, hr }) => {
                         </div>
 
                         <div style={{margin: "0px"}} className="row">
+                            {/* TODO: ITERATE A NEW LIST EVERY 4 DIRECTS */}
                             <div className="col-md-4">
                                 <ul className="list-unstyled">
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Henry Carlson</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Douglas Fields</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Randy Holmes</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Louis Burke</h5>
-                                        </div>
-                                    </li>
+                                    {directs}
                                 </ul>
                             </div>
 
-                            <div className="col-md-4">
-                                <ul className="list-unstyled">
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Joshua Bishop</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Philip Nelson</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Jason Peters</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Gerald Austin</h5>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="col-md-4">
-                                <ul className="list-unstyled">
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Jose Knight</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Jordan Nguyen</h5>
-                                        </div>
-                                    </li>
-                                    <li className="media my-4">
-                                        <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
-                                        <div className="media-body">
-                                            <h5 className="mt-0 mb-1">Jordan Nguyen</h5>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                     <div className="row profile-part-5">
