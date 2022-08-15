@@ -7,6 +7,11 @@ body {
     width: 110px !important;
 }
 
+.rounded-circle {
+    width: 64px;
+    height: 64px;
+}
+
 
 .sidebar{
 position:absolute;
