@@ -94,11 +94,11 @@ const Dash = ({ user, employee, hr }) => {
                             </h2>
                             <ul className="list-unstyled">
                                 <li className="media">
-                                    <img className="mr-3 rounded-circle" src={"assets/images/dp.png"} alt="Generic placeholder image" />
+                                    <img className="mr-3 rounded-circle" src={hr.mgr.ext.AvatarURL} alt="Generic placeholder image" />
                                     <div className="media-body">
                                         <h5 className="mt-0 mb-1">{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</h5>
-                                        <span>{hr.mgr.main.JobTitle}, {hr.mgr.main.Org}</span><br />
-                                        <span>Widget Division</span>
+                                        <span>{hr.mgr.main.JobTitle}</span><br />
+                                        <span>{hr.mgr.main.Org}</span>
                                     </div>
                                 </li>
                             </ul>
