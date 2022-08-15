@@ -23,6 +23,7 @@ class Main {
         
         await this.routing.initialize();
         await this.routing.registerDatabase(this.database);
+        await this.hr.registerDatabase(this.database);
         await this.routing.registerHR(this.hr);
     }
 

@@ -17,9 +17,9 @@ const Dash = ({ user, employee, hr }) => {
     let directs = [];
     hr.directs.forEach((direct) => {directs.push(
         <li className="media my-4">
-            <img className="align-self-center mr-3 rounded-circle" src="assets/images/dp.png" alt="Generic placeholder image" />
+            <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
             <div className="media-body">
-                <h5 className="mt-0 mb-1">{direct.FirstName} {direct.LastName}</h5>
+                <h5 className="mt-0 mb-1">{direct.name}</h5>
             </div>
         </li>
     )});
