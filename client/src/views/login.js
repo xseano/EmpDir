@@ -11,7 +11,9 @@ const Login = () => {
     };
 
     return (
-    
+    <>
+    <link href="assets/css/login.css" rel="stylesheet" />
+
     <div className="canvas">
         <h1 className="canvasTitle">Login Please</h1>
         <div className="wrapper">
@@ -36,7 +38,7 @@ const Login = () => {
 
         </div>
     </div>
-
+    </>
     );
 };
 
