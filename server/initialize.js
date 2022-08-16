@@ -13,11 +13,11 @@ global.Bluebird       = require('bluebird');
 global.Fetch          = require('node-fetch');
 
 // App Globals
-global.Main      = require('./Main');
-global.Login     = require('./Login');
-global.Routing   = require('./Routing');
-global.Database  = require('./Database');
-global.HR = require('./HR');
+global.Main      = require('./main.js');
+global.Login     = require('./login.js');
+global.Routing   = require('./routing.js');
+global.Database  = require('./database.js');
+global.HR = require('./hr.js');
 
 // Config
 global.Config    = require('dotenv').config();
