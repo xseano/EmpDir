@@ -46,7 +46,7 @@
     flex-wrap: wrap;
   }
   
-  .card {
+  .cardAlt {
     width: 30%;
     padding: 10px;
     border-radius: 20px;
@@ -68,7 +68,7 @@
     line-height: 25px;
   }
   
-  .cardButton {
+  .cardAltButton {
     border: none;
     border-radius: 10px;
     background-color: rgba(53, 16, 102, 0.678);
@@ -227,7 +227,7 @@
   }
   
   @media screen and (max-width: 992px) {
-    .card {
+    .cardAlt {
       width: 100%;
       margin-bottom: 50px;
     }

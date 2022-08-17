@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import DefaultAvatar from "../img/avatar/default.png";
+
 
 const Navbar = ({ user, employee, hr }) => {
     const handleLogout = () => {
