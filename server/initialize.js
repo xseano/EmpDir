@@ -11,7 +11,6 @@ global.GitHubStrategy = require('passport-github2');
 global.MySQL          = require('mysql2/promise');
 global.Bluebird       = require('bluebird');
 global.Fetch          = require('node-fetch');
-global.Path         = require('path');
 
 // App Globals
 global.Main      = require('./main.js');
