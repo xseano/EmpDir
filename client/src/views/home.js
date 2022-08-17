@@ -1,3 +1,4 @@
+import "../css/login.css";
 import LoginIcon from "../img/login.png";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
   
     return (
         <>
-        
+
         <div className="canvas">
             <h1 className="canvasTitle">Welcome!</h1>
             <div className="wrapper">

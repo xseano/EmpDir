@@ -1,3 +1,4 @@
+import "../css/login.css";
 import GoogleIcon from "../img/google.png";
 import GithubIcon from "../img/github.png";
 
@@ -13,7 +14,6 @@ const Login = () => {
     return (
     <>
     
-
     <div className="canvas">
         <h1 className="canvasTitle">Login Please</h1>
         <div className="wrapper">
