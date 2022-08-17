@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { useEffect, useState } from "react";
 
+import "../css/style.css";
+
 const Dash = ({ user, employee, hr }) => {
     const [time, setTime] = useState(null);
     const [day, setDay] = useState(null);
