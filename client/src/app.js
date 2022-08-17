@@ -16,20 +16,19 @@ const App = () => {
   
   useEffect((user) => {
     if (!user) {
-      fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_AUTH_VALIDATION_PATH}`, {credentials: 'include'})
+        fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_AUTH_VALIDATION_PATH}`, {credentials: 'include'})
 		  .then(response => response.json())
 		  .then(res => {
-        let data = res.data;
-        console.log(data);
-        
-        if (data) {
-          setUser(data.user);
-          setEmployee(data.employee);
-          setHR(data.hr);
-        }
-		  });
+            let data = res.data;
+            console.log(data);
+            
+            if (data) {
+            setUser(data.user);
+            setEmployee(data.employee);
+            setHR(data.hr);
+            }
+		});
     }
-    
   }, []);  
 
   const ProtectedRoute = ({ user, type, redirectPath }) => {

@@ -17,6 +17,7 @@ class Main {
         await this.startWebserver();
         await this.configSerialization();
 
+        await this.login.initialize(); 
         await this.database.initialize();
         await this.database.setup();
         if (process.env.WANT_SEED_DB == "true") { await this.database.seed() }
@@ -38,23 +39,12 @@ class Main {
     }
 
     async startWebserver() {
-        if (process.env.DEV_ENV) {
-            this.server = WebServer.listen(process.env.WEBSERVER_PORT, process.env.WEBSERVER_HOST, () => {  
-                this.host = this.server.address().address;
-                this.port = this.server.address().port;     
-                this.login.initialize(this.host, this.port);  
+        this.server = WebServer.listen(process.env.WEBSERVER_PORT, () => {  
+            this.host = this.server.address().address;
+            this.port = this.server.address().port; 
 
-                console.log(`Webserver deployed at http://${this.host}:${this.port}`);
-            });
-        } else {
-            this.server = WebServer.listen(process.env.WEBSERVER_PORT, () => {     
-                this.host = this.server.address().address;
-                this.port = this.server.address().port;   
-                this.login.initialize(this.host, this.port);
-
-                console.log(`Webserver deployed at http://${this.host}:${this.port}`);
-            });
-        }
+            console.log(`Webserver deployed at http://${this.host}:${this.port}`);
+        });
     }
 
     async configServer() {
@@ -68,7 +58,7 @@ class Main {
 
         // CORS 
         WebServer.use(Cors({
-            origin: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}`,
+            origin: `http://${process.env.CLIENT_HOST}`,
             methods: "GET, POST, PUT, PATCH, DELETE",
             credentials: true,
         }));

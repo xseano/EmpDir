@@ -21,10 +21,10 @@ class Routing {
             // check if the user has authenticated
             if (req.isAuthenticated()) {
                 console.log(req.user);
-                res.redirect(`http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}${process.env.DASH_PATH}`);
+                res.redirect(`http://${process.env.CLIENT_HOST}${process.env.DASH_PATH}`);
             } else {
                 // user needs to relogin
-                res.redirect(`http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}${process.env.LOGIN_PATH}`);
+                res.redirect(`http://${process.env.CLIENT_HOST}${process.env.LOGIN_PATH}`);
             }
         });
 
@@ -32,7 +32,7 @@ class Routing {
             // async function, callback required
             req.logout((err) => {
                 if (err) { return next(err); }
-                res.redirect(`http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}${process.env.LOGIN_PATH}`);
+                res.redirect(`http://${process.env.CLIENT_HOST}${process.env.LOGIN_PATH}`);
             });
         });
 
@@ -47,7 +47,7 @@ class Routing {
         WebServer.get(`${process.env.GOOGLE_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('google', {
-                successRedirect: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}${process.env.DASH_PATH}`, // proceed to dashboard
+                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.DASH_PATH}`, // proceed to dashboard
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );
@@ -63,7 +63,7 @@ class Routing {
         WebServer.get(`${process.env.GITHUB_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('github', {
-                successRedirect: `http://${process.env.WEBSERVER_HOST}:${process.env.PROXY_PORT}${process.env.DASH_PATH}`, // proceed to dashboard
+                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.DASH_PATH}`, // proceed to dashboard
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );

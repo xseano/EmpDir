@@ -3,11 +3,11 @@ import DefaultAvatar from "../img/avatar/default.png";
 
 const Navbar = ({ user, employee, hr }) => {
     const handleLogout = () => {
-        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_LOGOUT_PATH}`, "_self");
+        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_LOGOUT_PATH}`, "_self");
     };
 
     const handleDash = () => {
-        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}:${process.env.REACT_APP_WEBSERVER_PORT}${process.env.REACT_APP_DASH_PATH}`, "_self");
+        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_DASH_PATH}`, "_self");
     };
     
     return (
