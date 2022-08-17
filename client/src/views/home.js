@@ -7,7 +7,7 @@ const Home = () => {
   
     return (
         <>
-        <link href="assets/css/login.css" rel="stylesheet" />
+        <link href="assets/css/login.css" rel="stylesheet" type="text/css" />
         
         <div className="canvas">
             <h1 className="canvasTitle">Welcome!</h1>
