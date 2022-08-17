@@ -24,6 +24,7 @@
     "node-fetch": "^2.6.7",
     "passport": "^0.6.0",
     "passport-github2": "^0.1.12",
-    "passport-google-oidc": "^0.1.0"
+    "passport-google-oidc": "^0.1.0",
+    "path": "^0.12.7"
   }
 }
