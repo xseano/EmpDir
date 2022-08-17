@@ -12,7 +12,7 @@ const Login = () => {
 
     return (
     <>
-    <link href="%PUBLIC_URL%/assets/css/login.css" rel="stylesheet" type="text/css" />
+    
 
     <div className="canvas">
         <h1 className="canvasTitle">Login Please</h1>

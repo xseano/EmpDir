@@ -117,7 +117,7 @@ position:relative;
 /*Cover Pic */
 
 .cover-pic {
-    background-image: url(../images/cover.png);
+    background-image: url(../img/cover.png);
     min-height: 250px;
     background-size: cover;
     background-position: center;
