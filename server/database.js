@@ -4,11 +4,14 @@ class Database {
     }
 
     async initialize() {
-        this.connection = await MySQL.createConnection({
+        this.connection = await MySQL.createPool({
             host     : process.env.DATABASE_HOST,
             user     : process.env.DATABASE_USR,
             password : process.env.DATABASE_PWD,
-            Promise  : Bluebird
+            Promise  : Bluebird,
+            waitForConnections: true,
+            connectionLimit: 10,
+            queueLimit: 0
         });
     }
 
