@@ -13,7 +13,7 @@ const Dash = ({ user, employee, hr }) => {
     employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
 
     let mgr_chain = [];
-    hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href="#">{mgr.name}</a></li>)});
+    hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
 
     let directs = [];
     hr.directs.forEach((direct) => {directs.push(
