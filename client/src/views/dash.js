@@ -138,7 +138,9 @@ const Dash = ({ user, employee, hr }) => {
 
                     <div className="card card3">
                         <h3>Address</h3>
-                        <p>{hr.emp.Street}, {hr.emp.City}, {hr.emp.State} {hr.emp.ZipCode}</p>
+                        <a href={`https://maps.google.com/?q=${hr.emp.Street},${hr.emp.City},${hr.emp.State},${hr.emp.ZipCode}`}>
+                            <p>{hr.emp.Street}, {hr.emp.City}, {hr.emp.State} {hr.emp.ZipCode}</p>
+                        </a>
                     </div>
 
                     <div className="card card4">
