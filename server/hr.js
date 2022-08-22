@@ -42,6 +42,7 @@ class HR {
                 let dir_name = `${direct.FirstName} ${direct.LastName}`;
                 
                 let data = {
+                    id: dir_emp.EmployeeID,
                     name: dir_name,
                     avatar: dir_emp.AvatarURL
                 };
