@@ -176,7 +176,7 @@ const Dash = ({ user, employee, hr }) => {
                             <h2 className="section-tittle">
                                 Additional Information
                             </h2>
-                            <p className="additional-info"><span className="span1">HR Manager</span><span className="span2">{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</span></p>
+                            <p className="additional-info"><span className="span1">HR Manager</span><span className="span2"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></span></p>
                         </div>
                     </div>
                 </div>
