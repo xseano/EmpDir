@@ -4,7 +4,7 @@ class Database {
     }
 
     async initialize() {
-        this.connection = await MySQL.createPool({
+        this.connection = await MySQL.createConnection({
             host     : process.env.DATABASE_HOST,
             user     : process.env.DATABASE_USR,
             password : process.env.DATABASE_PWD,

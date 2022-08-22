@@ -72,7 +72,7 @@ const Dash = ({ user, employee, hr }) => {
                                 <span className="firstname">{hr.emp.FirstName} </span>
                                 <span className="lastname">{hr.emp.LastName}</span>
                             </h1>
-                            <div className="designation">{hr.emp.JobTitle}, {hr.emp.State}</div>
+                            <div className="designation">{hr.emp.JobTitle}, {hr.emp.Org}</div>
                             <div className="more-deatils">
                                 <span className="flag"><img src="assets/images/united-states.svg" /> </span>
                                 <span className="time">{hr.emp.State} {hr.emp.CountryCode}, {time} </span>
