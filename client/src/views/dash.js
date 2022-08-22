@@ -113,19 +113,19 @@ const Dash = ({ user, employee, hr }) => {
                             <li className="media">
                                 <img className="mr-3" src="assets/images/email.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">{hr.emp.Email}</h5>
+                                    <h5 className="mt-0 mb-1"><a href={ `mailto:${hr.emp.Email}` }>{hr.emp.Email}</a></h5>
                                 </div>
                             </li>
                             <li className="media">
                                 <img className="mr-3" src="assets/images/phone.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">+1 {hr.emp.Phone}</h5>
+                                    <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
                                 </div>
                             </li>
                             <li className="media">
                                 <img className="mr-3" src="assets/images/mobile.svg" alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1">+1 {hr.emp.Phone}</h5>
+                                    <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
                                 </div>
                             </li>
                         </ul>
