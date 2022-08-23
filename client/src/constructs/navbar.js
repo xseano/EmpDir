@@ -1,4 +1,5 @@
 
+import Logo from "../img/logo.jpg";
 
 const Navbar = ({ user, employee, hr }) => {
     const handleLogout = () => {
@@ -15,7 +16,7 @@ const Navbar = ({ user, employee, hr }) => {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <a className="navbar-brand" href="#"><img alt="logo" src="assets/images/logo.jpg" /></a>
+            <a className="navbar-brand" href="#"><img alt="logo" src={Logo} /></a>
         {user ? (
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav mr-auto">

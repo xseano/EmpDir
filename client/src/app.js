@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 
 import Navbar from "./constructs/navbar";
 
 import Home from "./views/home";
 import Login from "./views/login";
 import Dash from "./views/dash";
+import Profile from "./views/profile";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -22,9 +23,9 @@ const App = () => {
             console.log(data);
             
             if (data) {
-            setUser(data.user);
-            setEmployee(data.employee);
-            setHR(data.hr);
+              setUser(data.user);
+              setEmployee(data.employee);
+              setHR(data.hr);
             }
 		});
     }
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
 		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+          <Route path="/profile/:id" element={user ? <Suspense> <Profile user={user} /> </Suspense> : <Login />} />
         </Routes>
     </BrowserRouter>
   );

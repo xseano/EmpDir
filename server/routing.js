@@ -136,6 +136,69 @@ class Routing {
                 });
             }
         });
+
+        WebServer.get(`${process.env.PROFILE_LOOKUP_PATH}/:id`, async (req, res) => {
+            // check if the user has authenticated and we have an id supplied in the url
+            let id = req.params.id;
+            console.log(id);
+            console.log(req.user);
+
+            if (id) {
+                let emp_id = parseInt(id); 
+                let emp_ext = await this.database.getEmployeeExt(emp_id); 
+                let emp_contacts = await this.database.getContacts(emp_id); 
+                let emp_tags = await this.database.getTags(emp_id);
+
+                let hr_emp = await this.hr.getEmployee(emp_id);
+
+                let hr_mgr = await this.hr.getEmployee(hr_emp.ManagerID);
+                let hr_mgr_ext = await this.database.getEmployeeExt(hr_emp.ManagerID); 
+
+                let hr_rep = await this.hr.getEmployee(hr_emp.HRrepID);
+                let hr_rep_ext = await this.database.getEmployeeExt(hr_emp.HRrepID);
+
+                let hr_mgr_chain = await this.hr.getManagerChain(emp_id);
+                let hr_directs = await this.hr.getDirects(emp_id);
+                
+                return res.status(200).json({
+                    status: "success",
+                    code: "2000",
+                    message: "Successfully acquired employee.",
+                    data: {
+                        user: req.user,
+                        employee: {
+                            id: emp_id,
+                            ext: emp_ext,
+                            contacts: emp_contacts,
+                            tags: emp_tags
+                        },
+                        hr: {
+                            emp: hr_emp,
+                            mgr: {
+                                main: hr_mgr,
+                                ext: hr_mgr_ext
+                            },
+                            rep: {
+                                main: hr_rep,
+                                ext: hr_rep_ext
+                            },
+                            mgr_chain: hr_mgr_chain[0].managers,
+                            directs: hr_directs
+                        },
+                        cookies: req.cookies
+                    }
+                });
+
+
+            } else {
+                // user needs to relogin
+                return res.status(401).json({
+                    status: "failed",
+                    code: "1001",
+                    message: "We failed to process this request, please try again."
+                });
+            }
+        });
     }
 }
 
