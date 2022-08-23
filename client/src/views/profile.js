@@ -21,6 +21,9 @@ const Profile = ({ user }) => {
     let employee = data.employee;
     let hr = data.hr;
 
+    // debugging
+    console.log(data);
+
     let contacts = [];
     let tags = [];
     let mgr_chain = [];

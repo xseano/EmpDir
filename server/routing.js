@@ -140,9 +140,6 @@ class Routing {
         WebServer.get(`${process.env.PROFILE_LOOKUP_PATH}/:id`, async (req, res) => {
             // check if the user has authenticated and we have an id supplied in the url
             let id = req.params.id;
-            console.log(id);
-            console.log(req.user);
-
             if (id) {
                 let emp_id = parseInt(id); 
                 let emp_ext = await this.database.getEmployeeExt(emp_id); 
@@ -152,7 +149,7 @@ class Routing {
                 let hr_emp = await this.hr.getEmployee(emp_id);
 
                 let hr_mgr = await this.hr.getEmployee(hr_emp.ManagerID);
-                let hr_mgr_ext = await this.database.getEmployeeExt(hr_emp.ManagerID); 
+                let hr_mgr_ext = await this.database.getEmployeeExt(hr_emp.ManagerID);
 
                 let hr_rep = await this.hr.getEmployee(hr_emp.HRrepID);
                 let hr_rep_ext = await this.database.getEmployeeExt(hr_emp.HRrepID);
