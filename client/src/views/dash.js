@@ -1,46 +1,47 @@
 import "../css/style.css";
 import React, { Fragment } from 'react';
 import { useEffect, useState } from "react";
+import { suspend } from 'suspend-react';
+
+import Flag from "../img/united-states.svg";
+import Email from "../img/email.svg";
+import Phone from "../img/phone.svg";
+import Mobile from "../img/mobile.svg";
 
 const Dash = ({ user, employee, hr }) => {
-    const [time, setTime] = useState(null);
-    const [day, setDay] = useState(null);
-
     let contacts = [];
-    employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
-
     let tags = [];
-    employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
-
     let mgr_chain = [];
-    hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
-
     let directs = [];
-    hr.directs.forEach((direct) => {directs.push(
-        <li className="media my-4">
-            <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
-            <div className="media-body">
-                <h5 className="mt-0 mb-1"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${direct.id}` }>{direct.name}</a></h5>
-            </div>
-        </li>
-    )});
 
-    useEffect((time, day) => {
-        if ((!time) || (!day))
-        {
-            fetch(`https://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TZDB_KEY}&format=json&by=zone&zone=${hr.emp.TimeZone}`, {mode: 'cors'})
-            .then(response => response.json())
-            .then(res => { 
-                let date = new Date(res.formatted);
-                let time = date.toLocaleTimeString(navigator.language, {hour: '2-digit'});
-                let day = new Intl.DateTimeFormat('en-US', { weekday: 'short'}).format(date);
-                    day = day.toUpperCase();
+    if (employee) {
+        employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
+    
+        employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
+    }
 
-                setTime(time);
-                setDay(day);
-            });
-        }
-    }, []);
+    if (hr) {
+        hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
+    
+        hr.directs.forEach((direct) => {directs.push(
+            <li className="media my-4">
+                <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
+                <div className="media-body">
+                    <h5 className="mt-0 mb-1"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${direct.id}` }>{direct.name}</a></h5>
+                </div>
+            </li>
+        )});
+    }
+
+    const tzFetch = suspend(async (hr) => {
+        const res = await fetch(`https://api.timezonedb.com/v2.1/get-time-zone?key=${process.env.REACT_APP_TZDB_KEY}&format=json&by=zone&zone=${hr.emp.TimeZone}`, {mode: 'cors'});
+        return await res.json();
+    }, [hr]);
+
+    let date = new Date(tzFetch.formatted);
+    let time = date.toLocaleTimeString(navigator.language, {hour: '2-digit'});
+    let day = new Intl.DateTimeFormat('en-US', { weekday: 'short'}).format(date);
+        day = day.toUpperCase();
 
     return (
         <>
@@ -74,7 +75,7 @@ const Dash = ({ user, employee, hr }) => {
                             </h1>
                             <div className="designation">{hr.emp.JobTitle}, {hr.emp.Org}</div>
                             <div className="more-deatils">
-                                <span className="flag"><img src="assets/images/united-states.svg" /> </span>
+                                <span className="flag"><img src={Flag} /> </span>
                                 <span className="time">{hr.emp.State} {hr.emp.CountryCode}, {time} </span>
                                 <span className="day">{day}</span>
                             </div>
@@ -111,19 +112,19 @@ const Dash = ({ user, employee, hr }) => {
                         <h3>Contact</h3>
                         <ul className="list-unstyled">
                             <li className="media">
-                                <img className="mr-3" src="assets/images/email.svg" alt="Generic placeholder image" />
+                                <img className="mr-3" src={Email} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `mailto:${hr.emp.Email}` }>{hr.emp.Email}</a></h5>
                                 </div>
                             </li>
                             <li className="media">
-                                <img className="mr-3" src="assets/images/phone.svg" alt="Generic placeholder image" />
+                                <img className="mr-3" src={Phone} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
                                 </div>
                             </li>
                             <li className="media">
-                                <img className="mr-3" src="assets/images/mobile.svg" alt="Generic placeholder image" />
+                                <img className="mr-3" src={Mobile} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
                                 </div>
