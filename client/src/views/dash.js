@@ -39,9 +39,8 @@ const Dash = ({ user, employee, hr }) => {
     }, [hr]);
 
     let date = new Date(tzFetch.formatted);
-    let time = date.toLocaleTimeString(navigator.language, {hour: '2-digit'});
-    let day = new Intl.DateTimeFormat('en-US', { weekday: 'short'}).format(date);
-        day = day.toUpperCase();
+    let time = date.toLocaleTimeString(navigator.language, {hour: 'numeric', minute: '2-digit'});
+    let day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date);
 
     return (
         <>
@@ -76,8 +75,8 @@ const Dash = ({ user, employee, hr }) => {
                             <div className="designation">{hr.emp.JobTitle}, {hr.emp.Org}</div>
                             <div className="more-deatils">
                                 <span className="flag"><img src={Flag} /> </span>
-                                <span className="time">{hr.emp.State} {hr.emp.CountryCode}, {time} </span>
-                                <span className="day">{day}</span>
+                                <span className="time">{hr.emp.State}, {hr.emp.CountryCode}, {day} </span>
+                                <span className="day">{time}</span>
                             </div>
                         </div>
                     </div>
