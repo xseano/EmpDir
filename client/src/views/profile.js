@@ -26,11 +26,13 @@ const Profile = ({ user }) => {
     let mgr_chain = [];
     let directs = [];
 
-    if (data) {
+    if (employee) {
         employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
     
         employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
-    
+    }
+
+    if (hr) {
         hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
     
         hr.directs.forEach((direct) => {directs.push(
@@ -200,4 +202,4 @@ const Profile = ({ user }) => {
     );
 };
   
-  export default Profile;
+export default Profile;
