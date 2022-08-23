@@ -38,7 +38,7 @@ const Dash = ({ user, employee, hr }) => {
         return await res.json();
     }, [hr]);
 
-    let date = new Date(tzFetch.formatted);
+    let date = new Date(tzFetch.formatted.replace(/-/g, "/"));
     let time = date.toLocaleTimeString(navigator.language, {hour: 'numeric', minute: '2-digit'});
     let day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date);
 
