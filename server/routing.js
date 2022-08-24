@@ -80,8 +80,11 @@ class Routing {
             // check if the user has authenticated
             if (req.user) {
                 let uid = parseInt(req.user.id);
-
                 let emp_id = await this.database.getEmployeeID(uid); 
+
+                // default to specified employee if social id not mapped to emp id
+                emp_id = (emp_id ? emp_id : process.env.DEFAULT_EMPLOYEE_ID);
+
                 let emp_ext = await this.database.getEmployeeExt(emp_id); 
                 let emp_contacts = await this.database.getContacts(emp_id); 
                 let emp_tags = await this.database.getTags(emp_id);

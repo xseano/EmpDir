@@ -43,7 +43,7 @@ class Database {
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         let [result, rows] = await this.connection.query(`SELECT EmployeeID FROM Login WHERE SocialID=${usr_id}`);
-        return result[0].EmployeeID;
+        return (result[0] ? result[0].EmployeeID : null);
     }
 
     async getEmployeeExt(emp_id) {
@@ -51,7 +51,7 @@ class Database {
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         let [result, rows] = await this.connection.execute(`SELECT * FROM EmpExt WHERE EmployeeID=?`, [emp_id]);
-        return result[0];
+        return (result[0] ? result[0] : null);
     }
 
     async getContacts(emp_id) {
@@ -59,7 +59,7 @@ class Database {
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
         let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
-        return result;
+        return (result ? result : null);
     }
 
     async getTags(emp_id) {
@@ -78,7 +78,7 @@ class Database {
             }
         }
 
-        return tags;
+        return (tags ? tags : null);
     }
 
     async seed() {
