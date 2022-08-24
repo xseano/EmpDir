@@ -38,8 +38,26 @@ const Profile = ({ user }) => {
     }
 
     if ((hr.mgr_chain) && (hr.directs)) {
-        hr.mgr_chain.forEach((mgr) => {manager_chain.push(<li key={mgr.empID} className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
-    
+        hr.mgr_chain.forEach((mgr) => {
+            if (mgr.empID > 100) {
+                manager_chain.push(
+                    <li key={mgr.empID} className="breadcrumb-item">
+                        <a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>
+                            {mgr.name}
+                        </a>   
+                    </li>
+                );
+            } else {
+                manager_chain.push(
+                    <li key={mgr.empID} className="breadcrumb-item">
+                        <a href="#">
+                            {mgr.name}
+                        </a>   
+                    </li>
+                );
+            }
+        });
+            
         hr.directs.forEach((direct) => {directs.push(
             <li key={direct.id} className="media my-4">
                 <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
