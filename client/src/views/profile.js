@@ -26,26 +26,61 @@ const Profile = ({ user }) => {
 
     let contacts = [];
     let tags = [];
-    let mgr_chain = [];
+    let manager_chain = [];
     let directs = [];
+    let manager = [];
+    let hr_manager = [];
 
-    if (employee) {
+    if ((employee.contacts) && (employee.tags)) {
         employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
     
         employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
     }
 
-    if (hr) {
-        hr.mgr_chain.forEach((mgr) => {mgr_chain.push(<li className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
+    if ((hr.mgr_chain) && (hr.directs)) {
+        hr.mgr_chain.forEach((mgr) => {manager_chain.push(<li key={mgr.empID} className="breadcrumb-item"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${mgr.empID}` }>{mgr.name}</a></li>)});
     
         hr.directs.forEach((direct) => {directs.push(
-            <li className="media my-4">
+            <li key={direct.id} className="media my-4">
                 <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
                 <div className="media-body">
                     <h5 className="mt-0 mb-1"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${direct.id}` }>{direct.name}</a></h5>
                 </div>
             </li>
         )});
+    }
+
+    if ((hr.mgr.main) && (hr.mgr.ext)) {
+        manager.push(
+            <div className="row profile-part-3">
+                <div className="col-lg-12">
+                    <h2 className="section-tittle">
+                        Manager
+                    </h2>
+                    <ul className="list-unstyled">
+                        <li key={hr.mgr.ext.EmployeeID} className="media">
+                            <img className="mr-3 rounded-circle" src={hr.mgr.ext.AvatarURL} alt="Generic placeholder image" />
+                            <div className="media-body">
+                                <h5 className="mt-0 mb-1"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></h5>
+                                <span>{hr.mgr.main.JobTitle}</span><br />
+                                <span>{hr.mgr.main.Org}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        );
+
+        hr_manager.push(
+            <div className="row profile-part-5">
+                <div className="col-lg-12">
+                    <h2 className="section-tittle">
+                        Additional Information
+                    </h2>
+                    <p className="additional-info"><span className="span1">HR Manager</span><span className="span2"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></span></p>
+                </div>
+            </div>
+        );
     }
 
     const tzFetch = suspend(async (hr) => {
@@ -65,8 +100,8 @@ const Profile = ({ user }) => {
                 <div className="col-lg-12 text-left">
                     <nav className="custom-breadcrumb" aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            {mgr_chain}
-                            <li className="breadcrumb-item active" aria-current="page">{hr.emp.FirstName} {hr.emp.LastName}</li>
+                            {manager_chain}
+                            <li key={hr.emp.EmployeeID} className="breadcrumb-item active" aria-current="page">{hr.emp.FirstName} {hr.emp.LastName}</li>
                         </ol>
                     </nav>
                 </div>
@@ -103,41 +138,25 @@ const Profile = ({ user }) => {
                             <p className="para-text">{employee.ext.BioText}</p>
                         </div>
                     </div>
-                    <div className="row profile-part-3">
-                        <div className="col-lg-12">
-                            <h2 className="section-tittle">
-                                Manager
-                            </h2>
-                            <ul className="list-unstyled">
-                                <li className="media">
-                                    <img className="mr-3 rounded-circle" src={hr.mgr.ext.AvatarURL} alt="Generic placeholder image" />
-                                    <div className="media-body">
-                                        <h5 className="mt-0 mb-1"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></h5>
-                                        <span>{hr.mgr.main.JobTitle}</span><br />
-                                        <span>{hr.mgr.main.Org}</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    {manager}
                 </div>
                 <div className="col-lg-3 text-left sidebar">
                     <div className="card card1">
                         <h3>Contact</h3>
                         <ul className="list-unstyled">
-                            <li className="media">
+                            <li key="contact.email" className="media">
                                 <img className="mr-3" src={Email} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `mailto:${hr.emp.Email}` }>{hr.emp.Email}</a></h5>
                                 </div>
                             </li>
-                            <li className="media">
+                            <li key="contact.phone" className="media">
                                 <img className="mr-3" src={Phone} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
                                 </div>
                             </li>
-                            <li className="media">
+                            <li key="contact.mobile" className="media">
                                 <img className="mr-3" src={Mobile} alt="Generic placeholder image" />
                                 <div className="media-body">
                                     <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
@@ -170,9 +189,9 @@ const Profile = ({ user }) => {
                                 Reports
                                 <nav className="custom-breadcrumb" aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="#">{directs.length} Directs</a></li>
-                                        <li className="breadcrumb-item"><a href="#">{directs.length} Total </a></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Org Chart</li>
+                                        <li key="direct.general" className="breadcrumb-item"><a href="#">{directs.length} Directs</a></li>
+                                        <li key="direct.total" className="breadcrumb-item"><a href="#">{directs.length} Total </a></li>
+                                        <li key="direct.org.chart" className="breadcrumb-item active" aria-current="page">Org Chart</li>
                                     </ol>
                                 </nav>
                             </h2>
@@ -188,14 +207,7 @@ const Profile = ({ user }) => {
 
                         </div>
                     </div>
-                    <div className="row profile-part-5">
-                        <div className="col-lg-12">
-                            <h2 className="section-tittle">
-                                Additional Information
-                            </h2>
-                            <p className="additional-info"><span className="span1">HR Manager</span><span className="span2"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></span></p>
-                        </div>
-                    </div>
+                    {hr_manager}
                 </div>
             </div>
         </div>
