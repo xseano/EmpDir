@@ -178,6 +178,15 @@ const Dash = ({ user, employee, hr }) => {
                         <a href={`https://maps.google.com/?q=${hr.emp.Street},${hr.emp.City},${hr.emp.State},${hr.emp.ZipCode}`}>
                             <p>{hr.emp.Street}, {hr.emp.City}, {hr.emp.State} {hr.emp.ZipCode}</p>
                         </a>
+
+                        <iframe
+                        style={{border:0}}
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GMAPS_KEY}
+                            &q=${hr.emp.Street},${hr.emp.City},${hr.emp.State},${hr.emp.ZipCode}`}>
+                        </iframe>
                     </div>
 
                     <div className="card card4">

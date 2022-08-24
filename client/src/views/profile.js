@@ -57,7 +57,7 @@ const Profile = ({ user }) => {
                 );
             }
         });
-            
+
         hr.directs.forEach((direct) => {directs.push(
             <li key={direct.id} className="media my-4">
                 <img className="align-self-center mr-3 rounded-circle" src={direct.avatar} alt="Generic placeholder image" />
@@ -193,6 +193,15 @@ const Profile = ({ user }) => {
                         <a href={`https://maps.google.com/?q=${hr.emp.Street},${hr.emp.City},${hr.emp.State},${hr.emp.ZipCode}`}>
                             <p>{hr.emp.Street}, {hr.emp.City}, {hr.emp.State} {hr.emp.ZipCode}</p>
                         </a>
+
+                        <iframe
+                        style={{border:0}}
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GMAPS_KEY}
+                            &q=${hr.emp.Street},${hr.emp.City},${hr.emp.State},${hr.emp.ZipCode}`}>
+                        </iframe>
                     </div>
 
                     <div className="card card4">
