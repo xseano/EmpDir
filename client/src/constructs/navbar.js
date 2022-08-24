@@ -36,9 +36,9 @@ const Navbar = ({ user, employee, hr }) => {
                             <img className="avtar" src={employee.ext.AvatarURL} />{hr.emp.FirstName} {hr.emp.LastName}
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a className="dropdown-item" href="#">Dashboard</a>
+                            <a className="dropdown-item" onClick={handleDash}>Dashboard</a>
                             <a className="dropdown-item" href="#">Settings</a>
-                            <a className="dropdown-item" onClick={handleLogout} href="#">Logout</a>
+                            <a className="dropdown-item" onClick={handleLogout}>Logout</a>
                         </div>
                         </>
                     </li>
