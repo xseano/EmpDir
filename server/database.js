@@ -39,21 +39,33 @@ class Database {
     }
 
     async getEmployeeID(usr_id) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
         let [result, rows] = await this.connection.query(`SELECT EmployeeID FROM Login WHERE SocialID=${usr_id}`);
         return result[0].EmployeeID;
     }
 
     async getEmployeeExt(emp_id) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
         let [result, rows] = await this.connection.execute(`SELECT * FROM EmpExt WHERE EmployeeID=?`, [emp_id]);
         return result[0];
     }
 
     async getContacts(emp_id) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
         let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
         return result;
     }
 
     async getTags(emp_id) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+        
         let tags = [];
         let [result, rows] = await this.connection.execute(`SELECT * FROM EmpTag WHERE EmployeeID=?`, [emp_id]);
 
