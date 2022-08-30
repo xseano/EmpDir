@@ -29,7 +29,7 @@ const Profile = ({ user }) => {
     let manager_chain = [];
     let directs = [];
     let manager = [];
-    let hr_manager = [];
+    let hr_rep = [];
 
     if ((employee.contacts) && (employee.tags)) {
         employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
@@ -89,13 +89,13 @@ const Profile = ({ user }) => {
             </div>
         );
 
-        hr_manager.push(
+        hr_rep.push(
             <div className="row profile-part-5">
                 <div className="col-lg-12">
                     <h2 className="section-tittle">
                         Additional Information
                     </h2>
-                    <p className="additional-info"><span className="span1">HR Manager</span><span className="span2"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.mgr.ext.EmployeeID}` }>{hr.mgr.main.FirstName} {hr.mgr.main.LastName}</a></span></p>
+                    <p className="additional-info"><span className="span1">HR Representative</span><span className="span2"><a href={ `${process.env.REACT_APP_PROFILE_PATH}/${hr.rep.ext.EmployeeID}` }>{hr.rep.main.FirstName} {hr.rep.main.LastName}</a></span></p>
                 </div>
             </div>
         );
@@ -234,7 +234,7 @@ const Profile = ({ user }) => {
 
                         </div>
                     </div>
-                    {hr_manager}
+                    {hr_rep}
                 </div>
             </div>
         </div>
