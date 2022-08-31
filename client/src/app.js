@@ -44,7 +44,7 @@ const App = () => {
     <BrowserRouter>
         <Navbar user={user} employee={employee} hr={hr} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
 		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
           <Route path="/profile/:id" element={user ? <Suspense> <Profile user={user} /> </Suspense> : <Login />} />
