@@ -1,114 +1,114 @@
 [
     {
       "EmployeeID": 1001,
-      "AvatarURL": "https://avatars.githubusercontent.com/u/16991015?v=4",
-      "BannerURL": "https://i.pinimg.com/originals/3f/92/3c/3f923c17476e924353393df7be5b463a.jpg",
-      "BioText": "The Developer",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/1001.jpg",
+      "BannerURL": "/img/banners/sj-skyline.jpg",
+      "BioText": "Sean Oberoi (aka 'The Developer') is the Director of Cloud Sales Division. He has helped teams in decision making and thought process for cloud solutions. He is very instrumental is developing Cloud Network sales initiative process and distributions systems. Used agile leadership and implementation strategies to help customer achieve vision on big data cloud and analytics cloud services. Worked, managed and led large delivery teams of technical architects, data scientists, project managers and developers. Also, managed and P&L worth 35+ CD systems. Led and managed multiple global engagement teams on software application development, maintenance and support of Cloud Services.",
+      "MobilePhone": "650-445-3595"
     },
     {
       "EmployeeID": 101,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "The CEO of the company",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/101.jpg",
+      "BannerURL": "/img/banners/stanford.jpg",
+      "BioText": "Mary Jane is the CEO for ACME",
+      "MobilePhone": "408-867-5310"
     },
     {
       "EmployeeID": 103,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "The HR Boss",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/103.jpg",
+      "BannerURL": "/img/banners/berkley.png",
+      "BioText": "Serena Gant is the Vice President for Human Resources.  Serena was a Partner with Mont/Blanck International in Opama, California. As a member of the firm's Global Technology Practice, she completed hundreds of C-Suite searches for large tech companies as well as venture backed start-ups. With ACME, she's managed various recruiting teams, and personally recruited numerous senior executives. Since starting, she has managed executive leadership recruiting, expanding globally and encompassing all lines of business. This team focuses on VP, SVP, EVP searches exclusively.",
+      "MobilePhone": "332-867-5678"
     },
     {
       "EmployeeID": 115,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "The HR Rep",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/115.jpg",
+      "BannerURL": "/img/banners/sj-skyline.jpg",
+      "BioText": "Jeff Bridges is responsible for all new hiring guidance and paperwork. Jeff is also responsible for any new hire offer letters and any employee inquires from outside sources. Questions and inquires regarding I-9, W-2 or tax exemptions should be directed to Jeff. If you require general assistance with questions regarding payroll, benefits and hiring process needs please contact Jeff at benefits_jeff@acme.com",
+      "MobilePhone": "408-867-4456"
     },
     {
       "EmployeeID": 102,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Operations",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/102.jpg",
+      "BannerURL": "/img/banners/sf.jpg",
+      "BioText": "Lil is the Vice President of operations at ACME. All inquires regarding budgeting, planning and expense approvals should be directed to Lil. All expenses related to travel need preapproval. Lil oversees any requisitions approval requests as well. All requests need to be approved by the area director prior to being forwarded to Lil.",
+      "MobilePhone": "408-867-5567"
     },
     {
       "EmployeeID": 104,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Finance",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/104.jpg",
+      "BannerURL": "/img/banners/stanford.jpg",
+      "BioText": "Dan Summers is the Vice President for Finance at ACME. Under his leadership Dan wants to administer reliable, timely, accurate incentive payments and deliver high quality services to Sales, while managing risk through process standardization and automation. Dan is oversees Global compensation department. Including enforcing the compensation terms and conditions, executing incentive administration models, technical setup of compensation and custom development and calculating incentive based commission and bonus plan.",
+      "MobilePhone": "332-867-5934"
     },
     {
       "EmployeeID": 105,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "VP Engineering",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/105.jpg",
+      "BannerURL": "/img/banners/berkley.png",
+      "BioText": "Bill Spears is the Vice President for Engineering at ACME. Bill is responsible for the development and product management of ACME's database products, including ACME Database, ACME NewTrip In-Memory Database, ACME London DB, and NoSQL Database. In addition, Bill is also responsible Database Cloud services including  Autonomous Data Cloud and ACME Database Cloud, and for engineered systems such as File Database Machine,  Database Appliance,  ACME Data Recovery tools, and Big Data Tools suite.",
+      "MobilePhone": "332-867-1234"
     },
     {
       "EmployeeID": 106,
-      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Abraham_Lincoln_O-55%2C_1861-crop.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "VP Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/106.jpg",
+      "BannerURL": "/img/banners/sj-skyline.jpg",
+      "BioText": "Tom Peters is the Vice President of Sales at ACME. Tom leads the California's  Technology Integration Engineering and Customer Success Organization. His team is staffed with experienced Cloud Architects, Customer Success Managers and Solutions Engineers that have proven track records in addressing complex enterprise IT issues across many platforms. ACME's certified Tool Architects work closely with organizations around the world on IT transformation strategies and helping customers fully leverage the breadth of their ACME and IT portfolio, and plan and execute IT strategies to meet business goals.",
+      "MobilePhone": "408-867-2299"
     },
     {
       "EmployeeID": 107,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "Direct Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/107.jpg",
+      "BannerURL": "/img/banners/sf.jpg",
+      "BioText": "Karen Gill is the Director for The DevTop Platforms teams is charted with the capture of the following markets: AWS systems & Application Development, Information Management, Integration, Security & Management. Her team brings together technical and industry specialists that blend experience and deep subject matter knowledge in these segments to grow ACME's market visibility. The team's responsibilities include building pipeline and leading the technical pursuits required to capture DevTop bookings and assist in customer adoption of DevTop capabilities. The team is tightly aligned with the Solution Engineering DevTop Hubs. If you are a DevTop Platform Rep in need of assistance ask your aligned Enterprise DevTop Architect to get us involved.",
+      "MobilePhone": "408-867-2867"
     },
     {
       "EmployeeID": 108,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "Direct Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/108.jpg",
+      "BannerURL": "/img/banners/stanford.jpg",
+      "BioText": "Kevin O'Brien is the Director for System Placement and Performance platform. Kevin oversees a team of excellent architects and engineers who are responsible for spearheading initiatives that maximize performance and ensure goal achievement through customer satisfaction measurement operations. Kevin has ensured continual success is deployment of new builds and effective marketing strategies for new Placement Suits. He also specializes in Mobility technology and platform services targeted to Software as a Service. Now he works in the System Platform Specialists team where his team's mission is to apply cross platform technologies to help customers drive innovations spanning their enterprise business processes.",
+      "MobilePhone": "408-867-3847"
     },
     {
       "EmployeeID": 109,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "Direct Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/109.jpg",
+      "BannerURL": "/img/banners/berkley.png",
+      "BioText": "Sean Connery is the Director of Tool development and sales division. Sean oversees ACME's Information Management Technical Platform team who leads Database, Big Data, ToC and Advanced Analytics transformative engagements. In this role, he is responsible for ensuring ACME's continually delivers on our customer's strategic vision and business goals using our Tool Dev capabilities. His team works with every part of a customer's solution at a practitioner level. They develop innovative assets including demos, workshops and solution patterns. They own data management thought leadership and focus on staying on the leading edge. He also is overseeing and managing architecture vision and execution for Key Accounts from a tools, application, information and technology perspective.",
+      "MobilePhone": "332-867-0029"
     },
     {
       "EmployeeID": 110,
-      "AvatarURL": "https://avatars0.githubusercontent.com/u/15217218?s=460&v=4.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "Direct Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/110.jpg",
+      "BannerURL": "/img/banners/sj-skyline.jpg",
+      "BioText": "Who am I?",
+      "MobilePhone": "408-123-6745"
     },
     {
       "EmployeeID": 111,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/111.jpg",
+      "BannerURL": "/img/banners/sf.jpg",
+      "BioText": "Tom is responsible for Technical Services and Delivery Management. Tom works closely with customers seeking IT tools for these services and helps provide setup and coaching resources. He has mentored and led AWS Big Tool platforms. Tom closely works with BITMAN, Design solutions and Checkered Technology industries. Tom is the contact for any questions coming from customers regarding these technologies. Tom can be reached at tech_sales_tom@acme.com",
+      "MobilePhone": "408-867-7456"
     },
     {
       "EmployeeID": 112,
-      "AvatarURL": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Thomas_Jefferson_by_Rembrandt_Peale%2C_1800.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/112.jpg",
+      "BannerURL": "/img/banners/stanford.jpg",
+      "BioText": "Noah Stapelton is a Technology Consultant with over 15 years of senior level experience in leading and managing a number of business transformation projects using Big Data and agile. Noah is responsible for mobile division sales. Verizon and Moto communications need to be directed to Noah. Noah can provide support for technical questions related to mobile setup tools, mobile data solutions, mobile technologies and Cross Communication Network Systems.",
+      "MobilePhone": "408-867-7733"
     },
     {
       "EmployeeID": 113,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/j/e/jeff-rojas-muslin-backdrop-oxford-spebpbob-photography-backdrops-01.jpg",
-      "BioText": "SalesPerson Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/113.jpg",
+      "BannerURL": "/img/banners/berkley.png",
+      "BioText": "Molly Harding is responsible for driving customer value through client facing advisory and delivery services in support of data solutions. Account abilities include, leading work streams and projects, supporting pre-sales and sales activities, owning deliverable, building key customer relationships, building and sharing institutional knowledge, and developing junior professionals. Molly is also responsible for Professional services and Management systems. Molly is leading AWS sales division platform. She closely works with Data Science team and Data Ingestion team. Technical solution architecture and vision for the data tool on AWS cloud.",
+      "MobilePhone": "332-867-6118"
     },
     {
       "EmployeeID": 114,
-      "AvatarURL": "https://www.encyclopedia.com/sites/default/files/4/2793330.jpg",
-      "BannerURL": "https://seamlessphoto.com/pub/media/catalog/product/cache/1/image/1140x400/e9c3970ab036de70892d86c6d221abfe/e/m/emily-soto-muslin-backdrop-eleanor-spebpheb-photography-backdrops-seamless-banner.jpg",
-      "BioText": "SalesPerson Sales",
-      "MobilePhone": "408-123-4567"
+      "AvatarURL": "/img/profiles/114.jpg",
+      "BannerURL": "/img/banners/sj-skyline.jpg",
+      "BioText": "Rob Gronk is currently part of ACME's Big Tool and Advanced Analytics CA pre-sales specialist team who lead Database, Big Tool, ADC and Advanced Analytics transformative opportunities. Any customer inquires requiring assistance with these technologies should be directed to Rob. Rob is also available to provide video conferencing setup solutions.",
+      "MobilePhone": "332-867-1991"
     }
   ]

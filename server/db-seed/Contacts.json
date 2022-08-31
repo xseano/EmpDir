@@ -1,37 +1,147 @@
 [
-    {
-      "EmployeeID": 1001,
-      "Contact": "Yahoo Email:",
-      "ContactAddr": "xseano@fakeCo.com"
-    },
-    {
+  {
+      "EmployeeID": 101,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088765309"
+  },
+  {
+      "EmployeeID": 101,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/mjane"
+  },
+  {
       "EmployeeID": 103,
-      "Contact": "Yahoo Email:",
-      "ContactAddr": "vp@fakeCo.com"
-    },
-    {
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328761212"
+  },
+  {
+      "EmployeeID": 103,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/sgant"
+  },
+  {
+      "EmployeeID": 104,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088762424"
+  },
+  {
+      "EmployeeID": 104,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/dsummers"
+  },
+  {
+      "EmployeeID": 105,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328765555"
+  },
+  {
+      "EmployeeID": 105,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/bspears"
+  },
+  {
+      "EmployeeID": 106,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088767777"
+  },
+  {
+      "EmployeeID": 106,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/tpeters"
+  },
+  {
+      "EmployeeID": 107,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328768888"
+  },
+  {
+      "EmployeeID": 107,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/kgill"
+  },
+  {
+      "EmployeeID": 108,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088761313"
+  },
+  {
+      "EmployeeID": 108,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/kobrien"
+  },
+  {
+      "EmployeeID": 109,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/sconnery"
+  },
+  {
+      "EmployeeID": 109,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328762424"
+  },
+  {
+      "EmployeeID": 111,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/tbrady"
+  },
+  {
+      "EmployeeID": 111,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088764545"
+  },
+  {
+      "EmployeeID": 112,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/nstapelton"
+  },
+  {
+      "EmployeeID": 112,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088765656"
+  },
+  {
       "EmployeeID": 113,
-      "Contact": "Phone 2:",
-      "ContactAddr": "408-876-3339"
-    },
-    {
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/mharding"
+  },
+  {
+      "EmployeeID": 113,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328766767"
+  },
+  {
+      "EmployeeID": 114,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/rgronk"
+  },
+  {
+      "EmployeeID": 114,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/3328767878"
+  },
+  {
       "EmployeeID": 1001,
-      "Contact": "Phone 2:",
-      "ContactAddr": "408-876-3338"
-    },
-    {
-      "EmployeeID": 1001,
-      "Contact": "GitHub:",
+      "Contact": "github",
       "ContactAddr": "github.com/xseano"
-    },
-    {
-      "EmployeeID": 110,
-      "Contact": "Slack",
-      "ContactAddr": "ga-students.slack.com"
-    },
-    {
-      "EmployeeID": 110,
-      "Contact": "Yahoo Email:",
-      "ContactAddr": "xseano@fakeCo.com"
-    }
-  ]
+  },
+  {
+      "EmployeeID": 1001,
+      "Contact": "website",
+      "ContactAddr": "xseano.com"
+  },
+  {
+      "EmployeeID": 1001,
+      "Contact": "linkedIn",
+      "ContactAddr": "linkedin.com/in/xseano"
+  },
+  {
+      "EmployeeID": 115,
+      "Contact": "linkedin",
+      "ContactAddr": "linkedin.com/in/jbridges"
+  },
+  {
+      "EmployeeID": 115,
+      "Contact": "zoom",
+      "ContactAddr": "acme.zoom.us/j/4088769090"
+  }
+]

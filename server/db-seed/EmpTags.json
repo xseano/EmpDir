@@ -1,74 +1,338 @@
 [
-    {
-      "EmployeeID": 1001,
-      "TagID": 1
-    },
-    {
-      "EmployeeID": 1001,
-      "TagID": 2
-    },
-    {
-      "EmployeeID": 104,
-      "TagID": 2
-    },
-    {
-      "EmployeeID": 106,
-      "TagID": 2
-    },
-    {
-      "EmployeeID": 105,
-      "TagID": 2
-    },
-    {
-      "EmployeeID": 1001,
-      "TagID": 3
-    },
-    {
-      "EmployeeID": 115,
-      "TagID": 3
-    },
-    {
-      "EmployeeID": 107,
-      "TagID": 5
-    },
-    {
-      "EmployeeID": 108,
-      "TagID": 5
-    },
-    {
-      "EmployeeID": 109,
-      "TagID": 5
-    },
-    {
-      "EmployeeID": 110,
-      "TagID": 5
-    },
-    {
-      "EmployeeID": 111,
-      "TagID": 6
-    },
-    {
-      "EmployeeID": 112,
-      "TagID": 6
-    },
-    {
-      "EmployeeID": 113,
-      "TagID": 6
-    },
-    {
-      "EmployeeID": 114,
-      "TagID": 6
-    },
-    {
-      "EmployeeID": 110,
-      "TagID": 7
-    },
-    {
-      "EmployeeID": 112,
-      "TagID": 7
-    },
-    {
-      "EmployeeID": 1001,
-      "TagID": 7
-    }
+  {
+      "TagID": 1,
+      "EmployeeID": 101
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 101
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 101
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 101
+  },
+  {
+      "TagID": 18,
+      "EmployeeID": 101
+  },
+  {
+      "TagID": 2,
+      "EmployeeID": 103
+  },
+  {
+      "TagID": 19,
+      "EmployeeID": 103
+  },
+  {
+      "TagID": 118,
+      "EmployeeID": 103
+  },
+  {
+      "TagID": 22,
+      "EmployeeID": 104
+  },
+  {
+      "TagID": 18,
+      "EmployeeID": 104
+  },
+  {
+      "TagID": 2,
+      "EmployeeID": 104
+  },
+  {
+      "TagID": 18,
+      "EmployeeID": 104
+  },
+  {
+      "TagID": 2,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 23,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 18,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 105
+  },
+  {
+      "TagID": 2,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 18,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 10,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 11,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 12,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 13,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 14,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 15,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 16,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 17,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 29,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 30,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 106
+  },
+  {
+      "TagID": 5,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 25,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 16,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 17,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 107
+  },
+  {
+      "TagID": 5,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 26,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 14,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 15,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 108
+  },
+  {
+      "TagID": 5,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 27,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 29,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 30,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 224,
+      "EmployeeID": 109
+  },
+  {
+      "TagID": 6,
+      "EmployeeID": 111
+  },
+  {
+      "TagID": 28,
+      "EmployeeID": 111
+  },
+  {
+      "TagID": 11,
+      "EmployeeID": 111
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 111
+  },
+  {
+      "TagID": 6,
+      "EmployeeID": 112
+  },
+  {
+      "TagID": 28,
+      "EmployeeID": 112
+  },
+  {
+      "TagID": 12,
+      "EmployeeID": 112
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 112
+  },
+  {
+      "TagID": 6,
+      "EmployeeID": 113
+  },
+  {
+      "TagID": 28,
+      "EmployeeID": 113
+  },
+  {
+      "TagID": 13,
+      "EmployeeID": 113
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 113
+  },
+  {
+      "TagID": 6,
+      "EmployeeID": 114
+  },
+  {
+      "TagID": 28,
+      "EmployeeID": 114
+  },
+  {
+      "TagID": 13,
+      "EmployeeID": 114
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 114
+  },
+  {
+      "TagID": 5,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 28,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 7,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 8,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 9,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 10,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 11,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 12,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 13,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 24,
+      "EmployeeID": 1001
+  },
+  {
+      "TagID": 19,
+      "EmployeeID": 115
+  },
+  {
+      "TagID": 20,
+      "EmployeeID": 115
+  }
 ]
