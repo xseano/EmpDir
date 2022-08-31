@@ -2,6 +2,7 @@ import { useEffect, useState, Suspense } from "react";
 
 import Navbar from "./constructs/navbar";
 import Footer from "./constructs/footer";
+import Loading from "./constructs/loading";
 
 import Home from "./views/home";
 import Login from "./views/login";
@@ -44,10 +45,10 @@ const App = () => {
     <BrowserRouter>
         <Navbar user={user} employee={employee} hr={hr} />
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={user ? <Dash user={user} /> : <Login />} />
-		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
-          <Route path="/profile/:id" element={user ? <Suspense> <Profile user={user} /> </Suspense> : <Login />} />
+          <Route path="/" element={user ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+          <Route path="/login" element={user ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Loading />} />
+          <Route path="/profile/:id" element={user ? <Suspense> <Profile user={user} /> </Suspense> : <Loading />} />
         </Routes>
         <Footer />
     </BrowserRouter>
