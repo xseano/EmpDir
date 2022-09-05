@@ -115,7 +115,7 @@ const Dash = ({ user, employee, hr }) => {
     const downloadVCard = () => {
         let vCard = formatVCard();
         let blob = new Blob([ vCard.toString() ], {type: "text/vcard;charset=utf-8"});
-        FileSaver.saveAs(blob, `${employee.ext.EmployeeID}.vcf`);
+        FileSaver.saveAs(blob, `${hr.emp.FirstName}${hr.emp.LastName}.vcf`);
     };
 
     return (
