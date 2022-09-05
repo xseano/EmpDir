@@ -3,11 +3,14 @@ import React, { Fragment, Suspense } from 'react';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { suspend } from 'suspend-react';
+import vCardJS from 'vcard-creator';
+import FileSaver from "file-saver";
 
 import Flag from "../img/united-states.svg";
 import Email from "../img/email.svg";
 import Phone from "../img/phone.svg";
 import Mobile from "../img/mobile.svg";
+import VCard from "../img/vcard.svg";
 
 const Profile = ({ user }) => {
     const { id } = useParams();
@@ -110,6 +113,26 @@ const Profile = ({ user }) => {
     let time = date.toLocaleTimeString(navigator.language, {hour: 'numeric', minute: '2-digit'});
     let day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date);
 
+    const formatVCard = () => {
+        let vCard = new vCardJS();
+        
+        vCard.addName(hr.emp.LastName, hr.emp.FirstName);
+        vCard.addCompany("ACME");
+        vCard.addPhoneNumber(hr.emp.Phone, "PREF;WORK");
+        vCard.addPhoneNumber(employee.ext.MobilePhone, "MOBILE");
+        vCard.addJobtitle(hr.emp.JobTitle);
+        vCard.addRole(hr.emp.Org);
+        vCard.addAddress(hr.emp.Street, hr.emp.City, hr.emp.State, hr.emp.ZipCode);
+
+        return vCard;
+    };
+
+    const downloadVCard = () => {
+        let vCard = formatVCard();
+        let blob = new Blob([ vCard.toString() ], {type: "text/vcard;charset=utf-8"});
+        FileSaver.saveAs(blob, `${employee.ext.EmployeeID}.vcf`);
+    };
+
     return (
         <>
         <div>
@@ -207,6 +230,13 @@ const Profile = ({ user }) => {
                     <div className="card card4">
                         <h3>Tags</h3>
                         {tags}
+                    </div>
+
+                    <div className="card card5">
+                        <h3>Download Contact</h3>
+                        <a key="vcard.download" onClick={downloadVCard}>
+                            <img className="vcard" src={VCard} />
+                        </a>
                     </div>
                 </div>
                 <div className="col-lg-9">
