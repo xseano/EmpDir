@@ -26,11 +26,7 @@ const Navbar = ({ user, employee, hr }) => {
                     </form>
                 </ul>
                 <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <a className="nav-link" href="#"><i className="fas fa-bell alet-icon"></i> Notifications</a>
-                    </li>
                     <li className="nav-item dropdown">
-                    
                         <>
                         <a className="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img className="avtar" src={employee.ext.AvatarURL} />{hr.emp.FirstName} {hr.emp.LastName}
