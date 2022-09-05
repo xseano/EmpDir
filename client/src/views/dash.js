@@ -162,7 +162,7 @@ const Dash = ({ user, employee, hr }) => {
                             <li key="contact.mobile" className="media">
                                 <img className="mr-3" src={Mobile} alt="Generic placeholder image" />
                                 <div className="media-body">
-                                    <h5 className="mt-0 mb-1"><a href={ `tel:${hr.emp.Phone}` }>+1 {hr.emp.Phone}</a></h5>
+                                    <h5 className="mt-0 mb-1"><a href={ `tel:${employee.ext.MobilePhone}` }>+1 {employee.ext.MobilePhone}</a></h5>
                                 </div>
                             </li>
                         </ul>
