@@ -76,6 +76,22 @@ class Routing {
             });
         });
 
+        WebServer.post(process.env.SEARCH_MAIN_PATH, async (req, res) => {
+            // check if the user has authenticated
+            if (req.user) {
+                let searchInput = req.query.q;
+                console.log(searchInput);
+
+                if (searchInput) {
+                    
+                }
+
+            } else {
+                // user needs to relogin
+                
+            }
+        });
+
         WebServer.get(process.env.AUTH_VALIDATION_PATH, async (req, res) => {
             // check if the user has authenticated
             if (req.user) {

@@ -8,6 +8,7 @@ import Home from "./views/home";
 import Login from "./views/login";
 import Dash from "./views/dash";
 import Profile from "./views/profile";
+import Search from "./views/search";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -47,6 +48,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={user ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
           <Route path="/login" element={user ? <Dash user={user} employee={employee} hr={hr} /> : <Login />} />
+          <Route path="/search" element={user ? <Search /> : <Login />} />
 		      <Route path="/dash" element={employee ? <Dash user={user} employee={employee} hr={hr} /> : <Loading />} />
           <Route path="/profile/:id" element={user ? <Suspense> <Profile user={user} /> </Suspense> : <Loading />} />
         </Routes>
