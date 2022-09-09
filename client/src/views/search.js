@@ -6,17 +6,68 @@ import DefaultIcon from "../img/avatar/default.png";
 import VisitIcon from "../img/visit.svg";
 
 import { suspend } from 'suspend-react';
+import $ from 'jquery';
 
 const Search = () => {
 
-    const submitSearch = () => {
+    const submitSearch = async () => {
         let input = document.getElementById("searchInput").value;
         console.log(input);
 
-        const postSearch = suspend(async () => {
-            const res = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {method: 'POST', credentials: 'include'});
+        const searchFetch = suspend(async () => {
+            const res = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
             return await res.json();
+
         }, []);
+
+        let data = searchFetch.data;
+        let employees = data.employees;
+
+        // debugging
+        console.log(data);
+
+        employees.forEach((employee) => {
+            $('#searchResults').append(
+                `
+                <li class="media">
+                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                        <img class="mr-3 rounded-circle" src=${DefaultIcon} alt="Generic placeholder image" />
+                    </a>
+                    <div class="media-body">
+                        <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="mt-0 mb-1 name">
+                            <span class="first_name">${employee.FirstName}</span>
+                            <span class="last_name">${employee.LastName}</span>
+                        </a>
+                        <div class="more-info">
+                            <span class="desigation">
+                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.JobTitle},</a>
+                            </span>
+                            <span class="company_name">
+                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.Org} </a>
+                            </span>
+                        </div>
+                        <div class="contact-info">
+                            <span class="country">
+                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                    <span><img src=${FlagIcon} /></span>${employee.CountryCode}
+                                </a>
+                            </span>
+                            <span class="email">
+                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                    <span><img src=${EmailIcon} /></span>${employee.Email}
+                                </a>
+                            </span>
+                            <span class="phone">
+                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                    <span><img src=${PhoneIcon} /></span>+1 ${employee.Phone}
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="visit_profile_button"><img src=${VisitIcon} /></a>
+                </li>	
+           `);
+        });
     };
 
     return (
@@ -41,33 +92,36 @@ const Search = () => {
         <div className="container result-listing">
             <div className="row">
                 <div className="col-md-12">
-                    <ul className="list-unstyled">
+                    <ul id="searchResults" className="list-unstyled">
+                        
 						<li className="media">
-							<a href="userprofile/succ[i]._id "><img className="mr-3 rounded-circle" src={DefaultIcon} alt="Generic placeholder image" /></a>
+							<a href={`profile/`}>
+                                <img className="mr-3 rounded-circle" src={DefaultIcon} alt="Generic placeholder image" />
+                            </a>
 							<div className="media-body">
-								<a href="userprofile/succ[i]._id " className="mt-0 mb-1 name"><span className="first_name">succ[i].FirstName </span><span className="last_name"> succ[i].LastName </span></a>
+								<a href={`profile/`} className="mt-0 mb-1 name"><span className="first_name">succ[i].FirstName </span><span className="last_name"> succ[i].LastName </span></a>
 								<div className="more-info">
-									<span className="desigation"><a href="userprofile/succ[i]._id ">succ[i].JobTitle </a></span>,<span className="company_name"><a href="userprofile/succ[i]._id ">succ[i].Org </a></span>
+									<span className="desigation"><a href={`profile/`}>succ[i].JobTitle </a></span>,<span className="company_name"><a href={`profile/`}>succ[i].Org </a></span>
 								</div>
 								<div className="contact-info">
 									<span className="country">
-										<a href="userprofile/succ[i]._id ">
+										<a href={`profile/`}>
 											<span><img src={FlagIcon} /></span>succ[i].CountryCode
 										</a>
 									</span>
 									<span className="email">
-										<a href="userprofile/succ[i]._id ">
+										<a href={`profile/`}>
 											<span><img src={EmailIcon} /></span>succ[i].Email
 										</a>
 									</span>
 									<span className="phone">
-										<a href="userprofile/succ[i]._id ">
+										<a href={`profile/`}>
 											<span><img src={PhoneIcon} /></span>+1 succ[i].Phone
 										</a>
 									</span>
 								</div>
 							</div>
-							<a href="userprofile/succ[i]._id " className="visit_profile_button"><img src={VisitIcon} /></a>
+							<a href={`profile/`} className="visit_profile_button"><img src={VisitIcon} /></a>
 						</li>						
 					</ul>
                 </div>

@@ -7,6 +7,18 @@ class HR {
         this.database = database;
     }
 
+    async searchEmployee(value) {
+        try {
+            let res = await Fetch(`http://${process.env.HRSERVER_HOST}:${process.env.HRSERVER_PORT}${process.env.HR_API_PATH}?q=${value}`);
+            let results = await res.json();
+
+            return results;
+        } catch (err) {
+            console.log(err.message);
+            return null;
+        }
+    }
+
     async getEmployee(emp_id) {
         try {
             let res = await Fetch(`http://${process.env.HRSERVER_HOST}:${process.env.HRSERVER_PORT}${process.env.HR_API_PATH}/${emp_id}`);

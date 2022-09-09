@@ -76,19 +76,38 @@ class Routing {
             });
         });
 
-        WebServer.post(process.env.SEARCH_MAIN_PATH, async (req, res) => {
+        WebServer.get(process.env.SEARCH_MAIN_PATH, async (req, res) => {
             // check if the user has authenticated
             if (req.user) {
                 let searchInput = req.query.q;
                 console.log(searchInput);
 
                 if (searchInput) {
+                    let employee_search = await this.hr.searchEmployee(searchInput);
                     
+                    if (employee_search) {
+                        //let emp_id = employee_search.id;
+                        //let emp_ext = await this.database.getEmployeeExt(emp_id);
+
+                        return res.status(200).json({
+                            status: "success",
+                            code: "2001",
+                            message: "Results found.",
+                            data: {
+                                employees: employee_search,
+                            }
+                        });
+                    } else {
+                        return res.status(404).json({
+                            status: "failed",
+                            code: "1002",
+                            message: "No results found, please try again."
+                        });
+                    }
                 }
 
             } else {
                 // user needs to relogin
-                
             }
         });
 
