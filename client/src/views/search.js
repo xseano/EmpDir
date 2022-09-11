@@ -11,13 +11,14 @@ import $ from 'jquery';
 const Search = () => {
 
     const submitSearch = async () => {
-        let input = document.getElementById("searchInput").value;
+        let input = $('#searchInput').val();
         console.log(input);
+
+        //$('#searchResults').empty();
 
         const searchFetch = suspend(async () => {
             const res = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
             return await res.json();
-
         }, []);
 
         let data = searchFetch.data;
@@ -25,13 +26,17 @@ const Search = () => {
 
         // debugging
         console.log(data);
+        console.log(searchFetch);
 
-        employees.forEach((employee) => {
+        employees.forEach((emp) => {
+            let employee = emp.employee;
+            let avatar = emp.avatar;
+            
             $('#searchResults').append(
                 `
                 <li class="media">
                     <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
-                        <img class="mr-3 rounded-circle" src=${DefaultIcon} alt="Generic placeholder image" />
+                        <img class="mr-3 rounded-circle" src=${avatar} alt="Avatar image" />
                     </a>
                     <div class="media-body">
                         <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="mt-0 mb-1 name">

@@ -12,7 +12,19 @@ class HR {
             let res = await Fetch(`http://${process.env.HRSERVER_HOST}:${process.env.HRSERVER_PORT}${process.env.HR_API_PATH}?q=${value}`);
             let results = await res.json();
 
-            return results;
+            let employees = [];
+            for (const employee of results) {
+                let emp_ext = await this.database.getEmployeeExt(employee.id);
+                
+                let data = {
+                    employee,
+                    avatar: emp_ext.AvatarURL
+                };
+
+                employees.push(data);
+            }
+
+            return employees;
         } catch (err) {
             console.log(err.message);
             return null;
