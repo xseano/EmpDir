@@ -14,14 +14,14 @@ const Search = () => {
         let input = $('#searchInput').val();
         console.log(input);
 
-        //$('#searchResults').empty();
+        $('#searchResults').empty();
 
         const searchFetch = suspend(async () => {
             const res = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
             return await res.json();
         }, []);
 
-        let data = searchFetch.data;
+        let data = await searchFetch.data;
         let employees = data.employees;
 
         // debugging
