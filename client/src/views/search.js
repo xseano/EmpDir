@@ -12,21 +12,14 @@ const Search = () => {
 
     const submitSearch = async () => {
         let input = $('#searchInput').val();
-        console.log(input);
 
+        // clear previous results in preparation for new ones
         $('#searchResults').empty();
 
-        const searchFetch = suspend(async () => {
-            const res = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
-            return await res.json();
-        }, []);
+        const response = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
+        const resJSON = await response.json();
 
-        let data = await searchFetch.data;
-        let employees = data.employees;
-
-        // debugging
-        console.log(data);
-        console.log(searchFetch);
+        let employees = resJSON.data.employees;
 
         employees.forEach((emp) => {
             let employee = emp.employee;
@@ -98,36 +91,7 @@ const Search = () => {
             <div className="row">
                 <div className="col-md-12">
                     <ul id="searchResults" className="list-unstyled">
-                        
-						<li className="media">
-							<a href={`profile/`}>
-                                <img className="mr-3 rounded-circle" src={DefaultIcon} alt="Generic placeholder image" />
-                            </a>
-							<div className="media-body">
-								<a href={`profile/`} className="mt-0 mb-1 name"><span className="first_name">succ[i].FirstName </span><span className="last_name"> succ[i].LastName </span></a>
-								<div className="more-info">
-									<span className="desigation"><a href={`profile/`}>succ[i].JobTitle </a></span>,<span className="company_name"><a href={`profile/`}>succ[i].Org </a></span>
-								</div>
-								<div className="contact-info">
-									<span className="country">
-										<a href={`profile/`}>
-											<span><img src={FlagIcon} /></span>succ[i].CountryCode
-										</a>
-									</span>
-									<span className="email">
-										<a href={`profile/`}>
-											<span><img src={EmailIcon} /></span>succ[i].Email
-										</a>
-									</span>
-									<span className="phone">
-										<a href={`profile/`}>
-											<span><img src={PhoneIcon} /></span>+1 succ[i].Phone
-										</a>
-									</span>
-								</div>
-							</div>
-							<a href={`profile/`} className="visit_profile_button"><img src={VisitIcon} /></a>
-						</li>						
+					
 					</ul>
                 </div>
             </div>
