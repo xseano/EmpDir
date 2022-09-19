@@ -7,7 +7,11 @@ const Navbar = ({ user, employee, hr }) => {
     };
 
     const handleDash = () => {
-        window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_DASH_PATH}`, "_self");
+        window.open(`${process.env.REACT_APP_DASH_PATH}`, "_self");
+    };
+
+    const handleSearch = () => {
+        window.open(`${process.env.REACT_APP_SEARCH_MAIN_PATH}`, "_self");
     };
     
     return (
@@ -29,6 +33,7 @@ const Navbar = ({ user, employee, hr }) => {
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a className="dropdown-item" onClick={handleDash}>Dashboard</a>
+                            <a className="dropdown-item" onClick={handleSearch}>Search</a>
                             <a className="dropdown-item" href="#">Settings</a>
                             <a className="dropdown-item" onClick={handleLogout}>Logout</a>
                         </div>
