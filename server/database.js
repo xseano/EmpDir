@@ -97,6 +97,35 @@ class Database {
         return (result ? result : null);
     }
 
+    async searchTags(value) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+        
+        let tags = [];
+        let [result, rows] = await this.connection.execute(`SELECT * FROM Tags WHERE TagLabel=?`, [value]);
+
+        return (result ? result : null);
+
+        /*for(let i in result) {
+            let tag = result[i];
+            let [result2, rows2] =  await this.connection.execute(`SELECT * FROM Tags WHERE TagID=?`, [tag.TagID]);
+            for(let i in result2) {
+                let tag_label = result2[i].TagLabel;
+                tags.push(tag_label);
+            }
+        }
+
+        return (tags ? tags : null);*/
+    }
+
+    async matchTag(tag_id) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
+        let [result, rows] = await this.connection.execute(`SELECT * FROM EmpTag WHERE TagID=?`, [tag_id]); 
+        return (result ? result : null);
+    }
+
     async seed() {
         let fs = require('fs');
         console.log("seeding db");

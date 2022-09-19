@@ -107,16 +107,30 @@ class Routing {
                         }
                     }
 
-                    console.log(result_references);
+                    let tag_search = await this.database.searchTags(searchInput);
+                    let tag_ids = new Set();
+                    if (tag_search) {
+                        for (const tag of tag_search) {
+                            tag_ids.add(tag.TagID);
+                        }
+
+                        if (tag_ids) {
+                            for (const tag_id of tag_ids) {
+                                let matched_tags = await this.database.matchTag(tag_id);
+                                for (const match of matched_tags) {
+                                    result_references.add(match.EmployeeID);
+                                }
+                            }
+                        }
+                    }
                     
-                    if (result_references) {
+                    if (result_references.size > 0) {
 
                         for (const emp_id of result_references) {
                             let employee = await this.hr.getEmployee(emp_id);
                             let employee_ext = await this.database.getEmployeeExt(emp_id);
 
                             employees.push({avatar: employee_ext.AvatarURL, employee: employee});
-                            console.log(employees);
                         }
 
                         return res.status(200).json({
