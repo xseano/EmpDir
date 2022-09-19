@@ -100,6 +100,13 @@ class Routing {
                         }
                     }
 
+                    let contact_search = await this.database.searchContacts(searchInput);
+                    if (contact_search) {
+                        for (const contact of contact_search) {
+                            result_references.add(contact.EmployeeID);
+                        }
+                    }
+
                     console.log(result_references);
                     
                     if (result_references) {

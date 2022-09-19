@@ -93,7 +93,7 @@ class Database {
         // use our chosen db
         await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
 
-        let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
+        let [result, rows] = await this.connection.query(`SELECT * FROM Contacts WHERE "${value}" in (EmployeeID, Contact, ContactAddr)`);
         return (result ? result : null);
     }
 
