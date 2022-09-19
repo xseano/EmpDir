@@ -19,53 +19,62 @@ const Search = () => {
         const response = await fetch(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${input}`, {credentials: 'include'});
         const resJSON = await response.json();
 
-        let employees = resJSON.data.employees;
-
-        employees.forEach((emp) => {
-            let employee = emp.employee;
-            let avatar = emp.avatar;
+        if (resJSON.data) {
+            let employees = resJSON.data.employees;
             
+            employees.forEach((emp) => {
+                let employee = emp.employee;
+                let avatar = emp.avatar;
+                
+                $('#searchResults').append(
+                    `
+                    <li class="media">
+                        <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                            <img class="mr-3 rounded-circle" src=${avatar} alt="Avatar image" />
+                        </a>
+                        <div class="media-body">
+                            <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="mt-0 mb-1 name">
+                                <span class="first_name">${employee.FirstName}</span>
+                                <span class="last_name">${employee.LastName}</span>
+                            </a>
+                            <div class="more-info">
+                                <span class="desigation">
+                                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.JobTitle},</a>
+                                </span>
+                                <span class="company_name">
+                                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.Org} </a>
+                                </span>
+                            </div>
+                            <div class="contact-info">
+                                <span class="country">
+                                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                        <span><img src=${FlagIcon} /></span>${employee.CountryCode}
+                                    </a>
+                                </span>
+                                <span class="email">
+                                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                        <span><img src=${EmailIcon} /></span>${employee.Email}
+                                    </a>
+                                </span>
+                                <span class="phone">
+                                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
+                                        <span><img src=${PhoneIcon} /></span>+1 ${employee.Phone}
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="visit_profile_button"><img src=${VisitIcon} /></a>
+                    </li>	
+               `);
+            });
+        } else {
             $('#searchResults').append(
                 `
-                <li class="media">
-                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
-                        <img class="mr-3 rounded-circle" src=${avatar} alt="Avatar image" />
-                    </a>
-                    <div class="media-body">
-                        <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="mt-0 mb-1 name">
-                            <span class="first_name">${employee.FirstName}</span>
-                            <span class="last_name">${employee.LastName}</span>
-                        </a>
-                        <div class="more-info">
-                            <span class="desigation">
-                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.JobTitle},</a>
-                            </span>
-                            <span class="company_name">
-                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>${employee.Org} </a>
-                            </span>
-                        </div>
-                        <div class="contact-info">
-                            <span class="country">
-                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
-                                    <span><img src=${FlagIcon} /></span>${employee.CountryCode}
-                                </a>
-                            </span>
-                            <span class="email">
-                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
-                                    <span><img src=${EmailIcon} /></span>${employee.Email}
-                                </a>
-                            </span>
-                            <span class="phone">
-                                <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id}>
-                                    <span><img src=${PhoneIcon} /></span>+1 ${employee.Phone}
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                    <a href=${process.env.REACT_APP_PROFILE_PATH}/${employee.id} class="visit_profile_button"><img src=${VisitIcon} /></a>
-                </li>	
+                <div>
+                    No results found.
+                </div>	
            `);
-        });
+        }
     };
 
     return (
