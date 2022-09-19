@@ -82,19 +82,42 @@ class Routing {
                 let searchInput = req.query.q;
                 console.log(searchInput);
 
+                let result_references = new Set();
+                let employees = [];
+
                 if (searchInput) {
-                    let employee_search = await this.hr.searchEmployee(searchInput);
+                    let hr_search = await this.hr.searchEmployee(searchInput);
+                    if (hr_search) { 
+                        for (const id of hr_search) {
+                            result_references.add(id);
+                        }
+                    }
                     
-                    if (employee_search) {
-                        //let emp_id = employee_search.id;
-                        //let emp_ext = await this.database.getEmployeeExt(emp_id);
+                    let empext_search = await this.database.searchEmployeeExt(searchInput);
+                    if (empext_search) {
+                        for (const emp of empext_search) {
+                            result_references.add(emp.EmployeeID);
+                        }
+                    }
+
+                    console.log(result_references);
+                    
+                    if (result_references) {
+
+                        for (const emp_id of result_references) {
+                            let employee = await this.hr.getEmployee(emp_id);
+                            let employee_ext = await this.database.getEmployeeExt(emp_id);
+
+                            employees.push({avatar: employee_ext.AvatarURL, employee: employee});
+                            console.log(employees);
+                        }
 
                         return res.status(200).json({
                             status: "success",
                             code: "2001",
                             message: "Results found.",
                             data: {
-                                employees: employee_search,
+                                employees: employees,
                             }
                         });
                     } else {

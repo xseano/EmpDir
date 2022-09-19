@@ -81,6 +81,22 @@ class Database {
         return (tags ? tags : null);
     }
 
+    async searchEmployeeExt(value) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
+        let [result, rows] = await this.connection.query(`SELECT * FROM EmpExt WHERE "${value}" in (EmployeeID, AvatarURL, BannerURL, BioText, MobilePhone)`);
+        return (result ? result : null);
+    }
+
+    async searchContacts(value) {
+        // use our chosen db
+        await this.connection.query(`USE ${process.env.DATABASE_NAME}`);
+
+        let [result, rows] = await this.connection.execute(`SELECT * FROM Contacts WHERE EmployeeID=?`, [emp_id]);
+        return (result ? result : null);
+    }
+
     async seed() {
         let fs = require('fs');
         console.log("seeding db");

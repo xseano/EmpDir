@@ -14,14 +14,7 @@ class HR {
 
             let employees = [];
             for (const employee of results) {
-                let emp_ext = await this.database.getEmployeeExt(employee.id);
-                
-                let data = {
-                    employee,
-                    avatar: emp_ext.AvatarURL
-                };
-
-                employees.push(data);
+                employees.push(employee.id);
             }
 
             return employees;
