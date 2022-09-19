@@ -20,10 +20,6 @@ const Navbar = ({ user, employee, hr }) => {
         {user ? (
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul className="navbar-nav mr-auto">
-                    <form className="form-inline custom-search">
-                        <i className="fas fa-search"></i>
-                        <input className="form-control mr-sm-2 search-box" type="search" placeholder="Type in to Search..." aria-label="Search" />
-                    </form>
                 </ul>
                 <ul className="navbar-nav">
                     <li className="nav-item dropdown">
