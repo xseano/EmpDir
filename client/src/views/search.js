@@ -6,9 +6,20 @@ import DefaultIcon from "../img/avatar/default.png";
 import VisitIcon from "../img/visit.svg";
 
 import { suspend } from 'suspend-react';
+import { useSearchParams } from "react-router-dom";
 import $ from 'jquery';
 
 const Search = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
+    
+    let searchQuery = searchParams.get("q");
+    $('#searchInput').val(searchQuery);
+
+    // automatically search
+    // bug: displays multiple entries for (currently) unknown reason
+    $("document").ready(() => {
+        //submitSearch();
+    });
 
     const submitSearch = async () => {
         let input = $('#searchInput').val();
@@ -21,7 +32,7 @@ const Search = () => {
 
         if (resJSON.data) {
             let employees = resJSON.data.employees;
-            
+
             employees.forEach((emp) => {
                 let employee = emp.employee;
                 let avatar = emp.avatar;

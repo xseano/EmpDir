@@ -22,7 +22,7 @@ const Dash = ({ user, employee, hr }) => {
     if ((employee.contacts) && (employee.tags)) {
         employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
     
-        employee.tags.forEach((tag) => {tags.push(<a className="tags" href="#">{tag}</a>)});
+        employee.tags.forEach((tag) => {tags.push(<a className="tags" href={ `${process.env.REACT_APP_SEARCH_MAIN_PATH}?q=${tag}` }>{tag}</a>)});
     }
 
     if ((hr.mgr_chain) && (hr.directs)) {
