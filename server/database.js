@@ -105,17 +105,6 @@ class Database {
         let [result, rows] = await this.connection.execute(`SELECT * FROM Tags WHERE TagLabel=?`, [value]);
 
         return (result ? result : null);
-
-        /*for(let i in result) {
-            let tag = result[i];
-            let [result2, rows2] =  await this.connection.execute(`SELECT * FROM Tags WHERE TagID=?`, [tag.TagID]);
-            for(let i in result2) {
-                let tag_label = result2[i].TagLabel;
-                tags.push(tag_label);
-            }
-        }
-
-        return (tags ? tags : null);*/
     }
 
     async matchTag(tag_id) {
@@ -128,7 +117,7 @@ class Database {
 
     async seed() {
         let fs = require('fs');
-        console.log("seeding db");
+        console.log("=== STARTING SEED ===");
  
         let contacts = JSON.parse(fs.readFileSync('db-seed/Contacts.json'));
         let empext = JSON.parse(fs.readFileSync('db-seed/EmpExt.json'));
@@ -166,6 +155,8 @@ class Database {
         if ((process.env.GOOGLE_SOCIAL_ID) && (process.env.EMPLOYEE_ID)) {
             let [result, rows] = await this.connection.execute(`INSERT INTO Login values(?, ?)`, [process.env.GOOGLE_SOCIAL_ID, process.env.EMPLOYEE_ID]);
         }
+
+        console.log("=== ENDING SEED ===");
     }
 }
 
