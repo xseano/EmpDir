@@ -47,7 +47,7 @@ class Routing {
         WebServer.get(`${process.env.GOOGLE_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('google', {
-                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.DASH_PATH}`, // proceed to dashboard
+                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.SUCCESSFUL_LOGIN_PATH}`, // proceed to dashboard
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );
@@ -63,7 +63,7 @@ class Routing {
         WebServer.get(`${process.env.GITHUB_AUTH_PATH}/callback`, 
             // bring us to the main dashboard if successful, back to login if not
             Passport.authenticate('github', {
-                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.DASH_PATH}`, // proceed to dashboard
+                successRedirect: `http://${process.env.CLIENT_HOST}${process.env.SUCCESSFUL_LOGIN_PATH}`, // proceed to dashboard
                 failureRedirect: process.env.FAILED_LOGIN_PATH // go back to login
             })
         );

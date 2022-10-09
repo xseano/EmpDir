@@ -19,6 +19,10 @@ const Dash = ({ user, employee, hr }) => {
     let manager = [];
     let hr_rep = [];
 
+    user = user ? user : JSON.parse(localStorage.getItem("auth.user"));
+    employee = employee ? employee : JSON.parse(localStorage.getItem("auth.employee"));
+    hr = hr ? hr : JSON.parse(localStorage.getItem("auth.hr"));
+
     if ((employee.contacts) && (employee.tags)) {
         employee.contacts.forEach((contact) => {contacts.push(<p><strong>{contact.Contact}</strong> {contact.ContactAddr}</p>)});
     

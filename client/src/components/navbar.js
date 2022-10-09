@@ -4,6 +4,9 @@ import Logo from "../img/logo.jpg";
 const Navbar = ({ user, employee, hr }) => {
     const handleLogout = () => {
         window.open(`http://${process.env.REACT_APP_WEBSERVER_HOST}${process.env.REACT_APP_LOGOUT_PATH}`, "_self");
+
+        // clear data stored locally beyond session storage
+        localStorage.clear();
     };
 
     const handleDash = () => {

@@ -1,31 +1,13 @@
-import "../css/login.css";
-import LoginIcon from "../img/login.png";
+import { Navigate } from 'react-router-dom';
 
 const Home = () => {
-    const handleLogin = () => {
-        window.open(process.env.REACT_APP_LOGIN_PATH, "_self");
-    };
-  
-    return (
-        <>
+    const user = JSON.parse(localStorage.getItem("auth.user"));
 
-        <div className="canvas">
-            <h1 className="canvasTitle">Welcome!</h1>
-            <div className="wrapper">
-                
-            <div className="left">
-                <div className="canvasButton login" onClick={handleLogin}>
-                <img src={LoginIcon} alt="" className="icon" />
-                Login
-                </div>
-			</div>
-
-            </div>
-        </div>
-        </>
-    );
-
-    
-  };
+    if (user !== null) {
+        return <Navigate to="/search" />;
+    } else {
+        return <Navigate to="/login" />;
+    }  
+};
   
   export default Home;
